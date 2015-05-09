@@ -16,8 +16,9 @@ else:
     print("your number is odd")
 
 # for loop with else statement
-for i in range(2, int(number / 2)):
+for i in range(2, number // 2):
     if number % i == 0:
         break
 else:
     print("your number is prime")
+
