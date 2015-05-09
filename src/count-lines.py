@@ -45,8 +45,6 @@ def count_words(filename):
     """
     Count the number of words in file. If the file can't be
     opened, it should be treated the same as if it was empty
-    :param filename:
-    :return:
     """
 
     with open(filename, 'r') as input_file:
