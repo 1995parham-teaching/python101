@@ -9,6 +9,7 @@
 \usepackage{graphicx}
 \usepackage{booktabs}
 \usepackage{ragged2e}
+\usepackage{minted}
 \usepackage{lipsum}
 \usepackage[export]{adjustbox}
 
@@ -21,6 +22,8 @@
 \definecolor{LightGray}{RGB}{150,150,150}
 \definecolor{TextGreen}{RGB}{115,155,15}
 \definecolor{Ocean}{RGB}{23,142,189}
+\definecolor{BG}{RGB}{215,215,215}
+
 
 \setbeamercolor{normal}{fg=DarkGray}
 \setbeamercolor{title}{fg=UniBlue}
@@ -257,8 +260,45 @@
 			\vspace{.1cm}
 			\begin{itemize}
 				\justifying
-				\item A function is a block of organized, reusable code that is used to perform a single, related action. Functions provide better modularity for your application and a high degree of code reusing.
+				\item Function blocks begin with the keyword \textcolor{orange}{def}, \\
+				followed by the function name and parentheses.
+				\item Any input parameters or arguments should be placed \\
+				within these parentheses.
+				\item The first statement of a function can be an optional statement \\
+				- the documentation string of the function or docstring.
 			\end{itemize}
+		\end{column}
+	\end{columns}
+\end{frame}
+
+%------------------------------------------------
+\begin{frame}[fragile]
+	\frametitle{Functions}
+	\begin{columns}[c]
+		\begin{column}{30cm}
+			\vspace{.1cm}
+			\begin{scriptsize}
+			  	\begin{minted}[
+			  	bgcolor=BG,
+			  	frame=lines,
+			  	framesep=2mm,
+			  	baselinestretch=1.2,
+			  	linenos]
+			  	{python}
+		  			def square(x):
+				  	    return x * x
+		  		\end{minted}
+		  		\begin{minted}[
+		  		bgcolor=BG,
+		  		frame=lines,
+		  		framesep=2mm,
+		  		baselinestretch=1.2,
+		  		linenos]
+		  		{python}
+			  		def square():
+		  			    return "Hello"
+			  	\end{minted}
+			\end{scriptsize}
 		\end{column}
 	\end{columns}
 \end{frame}
@@ -271,6 +311,9 @@
 			\vspace{.1cm}
 			\begin{itemize}
 				\justifying
+				\item The class statement creates a new class definition.
+				\item The name of the class immediately follows the keyword \textcolor{orange}{class} \\
+				followed by a colon as follows
 			\end{itemize}
 		\end{column}
 	\end{columns}
