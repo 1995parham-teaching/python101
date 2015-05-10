@@ -295,7 +295,7 @@
 		  		baselinestretch=1.2,
 		  		linenos]
 		  		{python}
-			  		def square():
+			  		def hello():
 		  			    return "Hello"
 			  	\end{minted}
 			\end{scriptsize}
@@ -315,6 +315,42 @@
 				\item The name of the class immediately follows the keyword \textcolor{orange}{class} \\
 				followed by a colon as follows
 			\end{itemize}
+		\end{column}
+	\end{columns}
+\end{frame}
+
+%------------------------------------------------
+\begin{frame}[fragile]
+	\frametitle{Class}
+	\begin{columns}[c]
+		\begin{column}{30cm}
+			\vspace{.1cm}
+			\begin{scriptsize}
+				\begin{minted}[
+				bgcolor=BG,
+				frame=lines,
+				framesep=2mm,
+				baselinestretch=1.2,
+				linenos]
+				{python}
+				class Employee:
+				    """
+				    Common base class for all employees
+				    """
+				    empCount = 0
+				
+				    def __init__(self, name, salary):
+				        self.name = name
+				        self.salary = salary
+				        Employee.empCount += 1
+				
+				    def displayCount(self):
+				        print "Total Employee %d" % Employee.empCount
+				
+				    def displayEmployee(self):
+				        print "Name : ", self.name,  ", Salary: ", self.salary
+				\end{minted}
+			\end{scriptsize}
 		\end{column}
 	\end{columns}
 \end{frame}
