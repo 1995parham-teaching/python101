@@ -84,7 +84,7 @@
 %----------------------------------------------------------------------------------------
 \title[Introduction]{Introduction to Python}
 \author{Parham Alvani}
-\institute[AUT] {
+\institute[9231058] {
   Amirkabir University of Technology \\
   \medskip
   {\small\tt parham.alvani@gmail.com}
@@ -300,6 +300,18 @@
 			  		def hello():
 		  			    return "Hello"
 			  	\end{minted}
+			  	\begin{minted}[
+			  	bgcolor=BG,
+			  	frame=lines,
+			  	framesep=2mm,
+			  	baselinestretch=1.2,
+			  	linenos]
+			  	{python}
+			  	def printme( str ):
+			  	    "This prints a passed string into this function"
+			  	    print str
+			  	    return
+			  	\end{minted}
 			\end{scriptsize}
 		\end{column}
 	\end{columns}
@@ -427,44 +439,73 @@
 	\end{columns}
 \end{frame}
 
-
 %------------------------------------------------
 \begin{frame}
-\frametitle{Big Data, the Noam Chomsky Way}
-\hspace*{9cm}\includegraphics[width=2.5cm]{figs/chamsky.pdf}
-\begin{columns}[c] 
-\column{26em}
-\begin{block}{}
-\justifying
-{\scriptsize Big data is a step forward. But, our problems are not lack of access to data, but understanding them. [Big data] is very useful if I want to find out something without going to the library, but I have to understand it, and that's the problem.}
-\end{block}
-\pause
-\centering
-\textcolor{Ocean}{Hmmm, not very much Chomsky-ish ..., but wait!}
-\pause
-\begin{block}{}
-\centering
-\justifying
-{\scriptsize We can be confident that any system of power - whether it's the state, Google, or whatever - is going to use the best available technology to control, to dominate, and to maximize their power. And they'll want to do it in secret.}
-\end{block}
-\centering
-\textcolor{darkred}{Now that's sounding more like Chomsky.}
-\end{columns}
+	\frametitle{Base Overloading Methods}
+	\begin{columns}[c]
+		\begin{column}{30cm}
+			\vspace{.1cm}
+			\begin{itemize}
+				\justifying
+				\item \_\_init\_\_( self [,args...] ) : \textcolor{Ocean}{Constructor (with any optional arguments)}
+				\item \_\_del\_\_( self ) : \textcolor{Ocean}{Destructor, deletes an object}
+				\item \_\_repr\_\_( self ) : \textcolor{Ocean}{Evaluatable string representation}
+				\item \_\_str\_\_( self ) : \textcolor{Ocean}{Printable string representation}
+				\item \_\_lt\_\_( self, other ):
+				\item \_\_le\_\_( self, other ):
+				\item \_\_eq\_\_( self, other ):
+				\item \_\_ne\_\_( self, other ):
+				\item \_\_gt\_\_( self, other ):
+				\item \_\_ge\_\_( self, other ): \\
+				\textcolor{Ocean}{These are the so-called “rich comparison” methods,} \\
+				\textcolor{Ocean}{and are called for comparison operators in preference to \_\_cmp\_\_() below.}
+			\end{itemize}
+		\end{column}
+	\end{columns}
 \end{frame}
 
 %------------------------------------------------
 \begin{frame}
-\frametitle{They Want to Do It In Secret ...}
-\begin{columns}
-\column{17em}
-\vspace{2cm}
-\begin{block}{}
-\centering
-The truth cannot stay hidden forever!
-\end{block}
-\end{columns}
-\vspace{.75cm}
-\hspace*{9cm}\includegraphics[width=2cm]{figs/snowden.pdf}
+	\frametitle{Base Overloading Methods}
+	\begin{columns}[c]
+		\begin{column}{30cm}
+			\vspace{.1cm}
+			\begin{itemize}
+				\justifying
+				\item \_\_cmp\_\_ ( self, x ) : \textcolor{Ocean}{Called by comparison operations if rich comparison} \\
+				\textcolor{Ocean}{is not defined.} 
+				\item \_\_add\_\_( self, other ):
+				\item \_\_sub\_\_( self, other ):
+				\item \_\_mul\_\_( self, other ):
+				\item \_\_floordiv\_\_( self, other ):
+				\item \_\_mod\_\_( self, other ):
+				\item \_\_divmod\_\_( self, other ):
+				\item \_\_pow\_\_( self, other[, modulo] ):
+				\end{itemize}
+		\end{column}
+	\end{columns}
+\end{frame}
+
+%------------------------------------------------
+\begin{frame}
+	\frametitle{Base Overloading Methods}
+	\begin{columns}[c]
+		\begin{column}{30cm}
+			\vspace{.1cm}
+			\begin{itemize}
+				\justifying
+				\item \_\_lshift\_\_( self, other ):
+				\item \_\_rshift\_\_( self, other ):
+				\item \_\_and\_\_( self, other ):
+				\item \_\_xor\_\_( self, other ):
+				\item \_\_or\_\_( self, other ): \\
+				\textcolor{Ocean}{These methods are called to implement the binary arithmetic operations} \\
+				\textcolor{green}{+, -, *, //, \%, divmod(), pow(), **, \textless\textless, \textgreater\textgreater,
+				\&, \textasciicircum, \textbar}
+				
+			\end{itemize}
+		\end{column}
+	\end{columns}
 \end{frame}
 
 %------------------------------------------------
