@@ -249,7 +249,7 @@
 		\end{column}
 	\end{columns}
 	\vspace{.5cm}
-	\hspace*{5.5cm}
+	\hspace*{5.5cm} \includegraphics[width=5cm]{figs/flow-control.jpg}
 \end{frame}
 
 %------------------------------------------------
@@ -269,6 +269,8 @@
 			\end{itemize}
 		\end{column}
 	\end{columns}
+	\vspace{.1cm}
+	\hspace*{5cm} \includegraphics[width=5cm]{figs/functions.jpg}
 \end{frame}
 
 %------------------------------------------------
@@ -317,6 +319,8 @@
 			\end{itemize}
 		\end{column}
 	\end{columns}
+	\vspace{.5cm}
+	\hspace*{5.5cm} \includegraphics[width=5cm]{figs/class.jpg}
 \end{frame}
 
 %------------------------------------------------
@@ -382,19 +386,47 @@
 
 %------------------------------------------------
 \begin{frame}
-\begin{columns}
-\column{28em}
-\vspace{2cm}
-\begin{block}{\centering\textcolor{darkred}{However, any data is better than none.}}
-\justifying
-An approximate answer to the right problem is worth a good deal more than an exact answer to an approximate problem.\\
-\vspace{.2cm}
-\hspace*{8.7cm}\footnotesize{- John Tukey}
-\end{block}
-\end{columns}
-\vspace{.75cm}
-\hspace*{8cm}\includegraphics[width=4cm]{figs/deal.pdf}
+	\frametitle{Inheritance}
+	\begin{columns}[c]
+		\begin{column}{30cm}
+			\vspace{.1cm}
+			\begin{itemize}
+				\justifying
+				\item Instead of starting from scratch, you can create a class by deriving it \\
+				from a preexisting class by listing the parent class in parentheses \\
+				after the new class name.
+			\end{itemize}
+		\end{column}
+	\end{columns}
+	\vspace{.5cm}
+	\hspace*{5.5cm} \includegraphics[width=5cm]{figs/Inheritance.jpg}
 \end{frame}
+
+%------------------------------------------------
+\begin{frame}[fragile]
+	\frametitle{Inheritance}
+	\begin{columns}[c]
+		\begin{column}{30cm}
+			\vspace{.05cm}
+			\begin{scriptsize}
+				\begin{minted}[
+				bgcolor=BG,
+				frame=lines,
+				framesep=2mm,
+				baselinestretch=1.2,
+				linenos]
+				{python}
+				class SubClassName (ParentClass1[, ParentClass2, ...]):
+				    """
+				    Optional class documentation string
+				    """
+				    # class_suite
+				\end{minted}
+			\end{scriptsize}
+		\end{column}
+	\end{columns}
+\end{frame}
+
 
 %------------------------------------------------
 \begin{frame}
