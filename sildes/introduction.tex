@@ -305,7 +305,7 @@
 
 %------------------------------------------------
 \begin{frame}
-	\frametitle{Class}
+	\frametitle{Classes}
 	\begin{columns}[c]
 		\begin{column}{30cm}
 			\vspace{.1cm}
@@ -321,10 +321,10 @@
 
 %------------------------------------------------
 \begin{frame}[fragile]
-	\frametitle{Class}
+	\frametitle{Classes}
 	\begin{columns}[c]
 		\begin{column}{30cm}
-			\vspace{.1cm}
+			\vspace{.05cm}
 			\begin{scriptsize}
 				\begin{minted}[
 				bgcolor=BG,
@@ -349,6 +349,15 @@
 				
 				    def displayEmployee(self):
 				        print "Name : ", self.name,  ", Salary: ", self.salary
+				\end{minted}
+				\begin{minted}[
+				bgcolor=BG,
+				frame=lines,
+				framesep=2mm,
+				baselinestretch=1.2,
+				linenos]
+				{python}
+				emp1 = Employee("Zara", 2000)
 				\end{minted}
 			\end{scriptsize}
 		\end{column}
