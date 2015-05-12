@@ -14,11 +14,19 @@ number = 10.1
 print("number: %g" % number)
 number = 1j
 print("number * number: %d" % (number * number).real)
+number = 10 / 3
+print("10 / 3 = %g" % number)
+number = 10 // 3
+print("10 // 3 = %d" % number)
+
+print("=========================")
 
 string_one = 'parham\n'
 string_two = "parham\n"
 print(string_one)
 print(string_two)
+
+print("=========================")
 
 my_set = {1, 2, 3, "parham"}
 my_list = [1, 2, 3, 'parham']
