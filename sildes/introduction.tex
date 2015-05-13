@@ -515,6 +515,87 @@
 
 %------------------------------------------------
 \begin{frame}
+	\frametitle{Data Hiding}
+	\begin{columns}[c]
+		\begin{column}{30cm}
+			\vspace{.1cm}
+			\begin{itemize}
+				\justifying
+				\item An object's attributes may or may not be visible outside \\
+				the class definition.
+				\item You need to name attributes with a double underscore prefix, and those \\
+				attributes then are not be directly visible to outsiders.
+				\item Python protects those members by internally changing the name to \\
+				include the class name.
+				\item You can access such attributes as \textcolor{orange}{object.\_className\_\_attrName}
+			\end{itemize}
+		\end{column}
+	\end{columns}
+	\vspace{1cm}
+	\hspace*{5.5cm}
+\end{frame}
+
+%------------------------------------------------
+\begin{frame}[fragile]
+	\frametitle{Data Hiding}
+	\begin{columns}[c]
+		\begin{column}{30cm}
+			\vspace{.05cm}
+			\begin{scriptsize}
+				\begin{minted}[
+				bgcolor=BG,
+				frame=lines,
+				framesep=2mm,
+				baselinestretch=1.2,
+				linenos]
+				{python}
+				#!/usr/bin/python
+				
+				class JustCounter:
+				__secretCount = 0
+				
+				def count(self):
+				self.__secretCount += 1
+				print self.__secretCount
+				
+				counter = JustCounter()
+				counter.count()
+				counter.count()
+				print counter.__secretCount
+				\end{minted}
+			\end{scriptsize}
+		\end{column}
+	\end{columns}
+\end{frame}
+
+%------------------------------------------------
+\begin{frame}[fragile]
+	\frametitle{Data Hiding}
+	\begin{columns}[c]
+		\begin{column}{30cm}
+			\vspace{.05cm}
+			\begin{scriptsize}
+				\begin{minted}[
+				bgcolor=BG,
+				frame=lines,
+				framesep=2mm,
+				baselinestretch=1.2,
+				linenos]
+				{python}
+				1
+				2
+				Traceback (most recent call last):
+				File "test.py", line 12, in <module>
+				print counter.__secretCount
+				AttributeError: JustCounter instance has no attribute '__secretCount'
+				\end{minted}
+			\end{scriptsize}
+		\end{column}
+	\end{columns}
+\end{frame}
+
+%------------------------------------------------
+\begin{frame}
 	\frametitle{Multiple Inheritance}
 	\begin{columns}[c]
 		\begin{column}{30cm}
@@ -538,7 +619,7 @@
 			\vspace{.1cm}
 			\begin{itemize}
 					\justifying
-					\item the C3 superclass linearization is an algorithm used primarily \\
+					\item The C3 superclass linearization is an algorithm used primarily \\
 					to obtain the order in which methods should \\
 					be inherited (the "linearization") in the presence of \\
 					multiple inheritance, and is often termed "MRO" \\
