@@ -13,7 +13,9 @@ class Contact:
     def __init__(self, lname, fname):
         self.lastName = lname
         self.firstName = fname
+        self.__private = 1
 
 
 student = Contact("Alvani", "Parham")
 print(student.firstName, student.lastName)
+print(student._Contact__private)
