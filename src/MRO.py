@@ -32,3 +32,11 @@ class Mystery(Novel):
 
 book1 = Book("Pro Python")
 print(book1.read())
+book1.bookmark(page=52)
+print(book1.read())
+book2 = Novel('pride and prejudice')
+print(book2.read())
+book3 = Mystery('Murder on the Orient Express')
+print(book3.read())
+book3.bookmark(page=352)
+print(book3.read())
