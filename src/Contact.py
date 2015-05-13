@@ -10,12 +10,29 @@ __author__ = 'Parham Alvani'
 
 
 class Contact:
-    def __init__(self, lname, fname):
+    def __init__(self, lname, fname, job):
         self.lastName = lname
         self.firstName = fname
+        self.job = job
         self.__private = 1
 
 
-student = Contact("Alvani", "Parham")
+class Student(Contact):
+    def __init__(self, lname, fname):
+        super(Student, self).__init__(lname, fname, 'Student')
+
+
+class Worker(Contact):
+    def __init__(self, lname, fname):
+        Contact.__init__(self, lname, fname, 'Worker')
+
+
+student = Student("Alvani", "Parham")
 print(student.firstName, student.lastName)
+print(student.job)
 print(student._Contact__private)
+
+worker = Worker("Alvani", "Parham")
+print(worker.firstName, worker.lastName)
+print(worker.job)
+print(worker._Contact__private)
