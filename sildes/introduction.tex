@@ -629,6 +629,135 @@
 	\end{columns}
 \end{frame}
 
+%------------------------------------------------
+\begin{frame}[fragile]
+	\frametitle{C3 Algorithm}
+	\begin{columns}[c]
+		\begin{column}{30cm}
+			\vspace{.05cm}
+			\begin{scriptsize}
+				\begin{minted}[
+				bgcolor=BG,
+				frame=lines,
+				framesep=2mm,
+				baselinestretch=1.2,
+				linenos]
+				{text}
+				class O
+				class A extends O
+				class B extends O
+				class C extends O
+				class D extends O
+				class E extends O
+				class K1 extends A, B, C
+				class K2 extends D, B, E
+				class K3 extends D, A
+				class Z extends K1, K2, K3
+				\end{minted}
+			\end{scriptsize}
+		\end{column}
+	\end{columns}
+\end{frame}
+
+%------------------------------------------------
+\begin{frame}[fragile]
+	\frametitle{C3 Algorithm}
+	\begin{columns}[c]
+		\begin{column}{30cm}
+			\vspace{.05cm}
+			\begin{scriptsize}
+				\begin{minted}[
+				bgcolor=BG,
+				frame=lines,
+				framesep=2mm,
+				baselinestretch=1.2,
+				linenos]
+				{text}
+				L(O)  := [O]                                                     
+				
+				L(A)  := [A] + merge(L(O), [O])
+				= [A] + merge([O], [O])
+				= [A, O]                                                  
+				
+				L(B)  := [B, O]
+				L(C)  := [C, O]
+				L(D)  := [D, O]
+				L(E)  := [E, O]
+				
+				L(K1) := [K1] + merge(L(A), L(B), L(C), [A, B, C])
+				= [K1] + merge([A, O], [B, O], [C, O], [A, B, C])
+				= [K1, A] + merge([O], [B, O], [C, O], [B, C])
+				= [K1, A, B] + merge([O], [O], [C, O], [C])
+				= [K1, A, B, C] + merge([O], [O], [O])
+				= [K1, A, B, C, O]
+				\end{minted}
+			\end{scriptsize}
+		\end{column}
+	\end{columns}
+\end{frame}
+
+%------------------------------------------------
+\begin{frame}[fragile]
+	\frametitle{C3 Algorithm}
+	\begin{columns}[c]
+		\begin{column}{30cm}
+			\vspace{.05cm}
+			\begin{scriptsize}
+				\begin{minted}[
+					bgcolor=BG,
+					frame=lines,
+					framesep=2mm,
+					baselinestretch=1.2,
+					linenos]
+					{text}
+					L(K2) := [K2] + merge(L(D), L(B), L(E), [D, B, E])
+					= [K2] + merge([D, O], [B, O], [E, O], [D, B, E])
+					= [K2, D] + merge([O], [B, O], [E, O], [B, E])
+					= [K2, D, B] + merge([O], [O], [E, O], [E])
+					= [K2, D, B, E] + merge([O], [O], [O])
+					= [K2, D, B, E, O]
+					
+					L(K3) := [K3] + merge(L(D), L(A), [D, A])
+					= [K3] + merge([D, O], [A, O], [D, A])
+					= [K3, D] + merge([O], [A, O], [A])
+					= [K3, D, A] + merge([O], [O])
+					= [K3, D, A, O]
+				\end{minted}
+			\end{scriptsize}
+		\end{column}
+	\end{columns}
+\end{frame}
+
+%------------------------------------------------
+\begin{frame}[fragile]
+	\frametitle{C3 Algorithm}
+	\begin{columns}[c]
+		\begin{column}{30cm}
+			\vspace{.05cm}
+			\begin{scriptsize}
+				\begin{minted}[
+					bgcolor=BG,
+					frame=lines,
+					framesep=2mm,
+					baselinestretch=1.2,
+					linenos]
+					{text}
+					L(Z)  := [Z] + merge(L(K1), L(K2), L(K3), [K1, K2, K3])
+					= [Z] + merge([K1, A, B, C, O], [K2, D, B, E, O], [K3, D, A, O], [K1, K2, K3])
+					= [Z, K1] + merge([A, B, C, O], [K2, D, B, E, O], [K3, D, A, O], [K2, K3])
+					= [Z, K1, K2] + merge([A, B, C, O], [D, B, E, O], [K3, D, A, O], [K3])
+					= [Z, K1, K2, K3] + merge([A, B, C, O], [D, B, E, O], [D, A, O])
+					= [Z, K1, K2, K3, D] + merge([A, B, C, O], [B, E, O], [A, O])
+					= [Z, K1, K2, K3, D, A] + merge([B, C, O], [B, E, O], [O])
+					= [Z, K1, K2, K3, D, A, B] + merge([C, O], [E, O], [O])
+					= [Z, K1, K2, K3, D, A, B, C] + merge([O], [E, O], [O])
+					= [Z, K1, K2, K3, D, A, B, C, E] + merge([O], [O], [O])
+					= [Z, K1, K2, K3, D, A, B, C, E, O]
+				\end{minted}
+			\end{scriptsize}
+		\end{column}
+	\end{columns}
+\end{frame}
 
 %------------------------------------------------
 \begin{frame}
