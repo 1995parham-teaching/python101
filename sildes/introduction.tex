@@ -507,7 +507,6 @@
 				\textcolor{Ocean}{These methods are called to implement the binary arithmetic operations} \\
 				\textcolor{green}{+, -, *, //, \%, divmod(), pow(), **, \textless\textless, \textgreater\textgreater,
 				\&, \textasciicircum, \textbar}
-				
 			\end{itemize}
 		\end{column}
 	\end{columns}
@@ -593,6 +592,26 @@
 		\end{column}
 	\end{columns}
 \end{frame}
+
+%------------------------------------------------
+\begin{frame}
+	\frametitle{What is a metaclass in Python?}
+	\begin{columns}[c]
+		\begin{column}{30cm}
+			\vspace{.1cm}
+			\begin{itemize}
+				\justifying
+				\item A metaclass is the class of a class
+				\item Like a class defines how an instance of the class behaves,\\
+				 a metaclass defines how a class behaves.
+				 \item A class is an instance of a metaclass.
+			\end{itemize}
+		\end{column}
+	\end{columns}
+	\vspace{.5cm}
+	\hspace*{2cm} \includegraphics[width=8cm]{figs/meta-class.jpg}
+\end{frame}
+
 
 %------------------------------------------------
 \begin{frame}
@@ -753,6 +772,77 @@
 					= [Z, K1, K2, K3, D, A, B, C] + merge([O], [E, O], [O])
 					= [Z, K1, K2, K3, D, A, B, C, E] + merge([O], [O], [O])
 					= [Z, K1, K2, K3, D, A, B, C, E, O]
+				\end{minted}
+			\end{scriptsize}
+		\end{column}
+	\end{columns}
+\end{frame}
+
+%------------------------------------------------
+\begin{frame}[fragile]
+	\frametitle{Class method differences in Python}
+	\begin{columns}[c]
+		\begin{column}{30cm}
+			\vspace{.05cm}
+			\begin{itemize}
+				\justifying
+				\item Bound, unbound and static
+				\item Basically, a call to a member function a bound function \\
+				is translated to a call to an unbound method. 
+			\end{itemize}
+			\vspace{0.5cm}
+			\begin{scriptsize}
+				\begin{minted}[
+				bgcolor=BG,
+				frame=lines,
+				framesep=2mm,
+				baselinestretch=1.2,
+				linenos]
+				{python}
+				class Test(object):
+				    def method_one(self):
+				        print "Called method_one"
+				
+				a_test = Test()
+				
+				a_test.method_one()
+				# is translated to
+				Test.method_one(a_test)
+				\end{minted}
+			\end{scriptsize}
+		\end{column}
+	\end{columns}
+\end{frame}
+
+%------------------------------------------------
+\begin{frame}[fragile]
+	\frametitle{Class method differences in Python}
+	\begin{columns}[c]
+		\begin{column}{30cm}
+			\vspace{.05cm}
+			\begin{itemize}
+				\justifying
+				\item The @staticmethod tells the built-in default metaclass type \\
+				(the class of a class) to not create bound methods for method\_two.
+			\end{itemize}
+			\vspace{0.5cm}
+			\begin{scriptsize}
+				\begin{minted}[
+				bgcolor=BG,
+				frame=lines,
+				framesep=2mm,
+				baselinestretch=1.2,
+				linenos]
+				{python}
+				class Test(object):
+				    @staticmethod
+				    def method_two():
+				        print "Called method two"
+				
+				a_test = Test()
+				a_test.method_two()
+				# is translated to
+				Test.method_two()
 				\end{minted}
 			\end{scriptsize}
 		\end{column}
