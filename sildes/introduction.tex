@@ -323,6 +323,35 @@
 \end{frame}
 
 %------------------------------------------------
+\begin{frame}[fragile]
+	\frametitle{Lambda}
+	\begin{columns}[c]
+		\begin{column}{30cm}
+			\vspace{.1cm}
+			\begin{itemize}
+				\justifying
+				\item Python supports simple anonymous functions through the lambda form.
+				\item The executable body of the lambda must be an expression \\
+				and can't be a statement, which is a restriction that limits its utility.
+			\end{itemize}
+			\begin{scriptsize}
+				\begin{minted}[
+				bgcolor=BG,
+				frame=lines,
+				framesep=2mm,
+				baselinestretch=1.2,
+				linenos]
+				{python}
+				foo = lambda x: x * x
+				\end{minted}
+			\end{scriptsize}
+		\end{column}
+	\end{columns}
+	\vspace{.1cm}
+	\hspace*{5cm} \includegraphics[width=5cm]{figs/lambda.png}
+\end{frame}
+
+%------------------------------------------------
 \begin{frame}
 	\frametitle{Classes}
 	\begin{columns}[c]
