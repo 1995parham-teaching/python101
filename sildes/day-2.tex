@@ -424,6 +424,7 @@
 	\end{columns}
 \end{frame}
 
+%------------------------------------------------
 \begin{frame}[fragile]
 	\frametitle{Iterators \& Generators}
 	\begin{columns}[c]
@@ -479,7 +480,123 @@
 			\begin{itemize}
 				\justifying
 				\item A module allows you to logically organize your Python code.
+				\item Grouping related code into a module makes the code easier to understand and use
 			\end{itemize}
+		\end{column}
+	\end{columns}
+\end{frame}
+
+%------------------------------------------------
+\begin{frame}[fragile]
+	\frametitle{Modules}
+	\begin{columns}[c]
+		\begin{column}{30cm}
+			\vspace{.1cm}
+			\begin{scriptsize}
+				\begin{minted}[
+				bgcolor=BG,
+				frame=lines,
+				framesep=2mm,
+				baselinestretch=1.2,
+				linenos]
+				{python}
+				def print_func( par ):
+				    print "Hello : ", par
+				    return
+				\end{minted}
+				\begin{minted}[
+				bgcolor=BG,
+				frame=lines,
+				framesep=2mm,
+				baselinestretch=1.2,
+				linenos]
+				{python}
+				# Import module support
+				import support
+							
+				# Now you can call defined function that module as follows
+				support.print_func("Zara")
+				\end{minted}
+			\end{scriptsize}
+		\end{column}
+	\end{columns}
+\end{frame}
+
+%------------------------------------------------
+\begin{frame}
+	\frametitle{Modules}
+	\begin{columns}[c]
+		\begin{column}{30cm}
+			\vspace{.1cm}
+			\begin{itemize}
+				\justifying
+				\item The current directory.
+				\item Python then searches each directory in the shell variable PYTHONPATH.
+				\item If all else fails, Python checks the default path. \\
+				On UNIX, this default path is normally /usr/local/lib/python/.
+			\end{itemize}
+		\end{column}
+	\end{columns}
+\end{frame}
+
+%------------------------------------------------
+\begin{frame}[fragile]
+	\frametitle{Socket Programming}
+	\begin{columns}[c]
+		\begin{column}{30cm}
+			\vspace{.1cm}
+			\begin{itemize}
+				\justifying
+				\item Python provides two levels of access to network services
+				\item To create a socket, you must use the socket.socket()
+				\item \textcolor{green}{socket\_family}: This is either AF\_UNIX or AF\_INET.
+				\item \textcolor{green}{socket\_type}: This is either SOCK\_STREAM or SOCK\_DGRAM.
+				\item \textcolor{green}{protocol}: This is usually left out, defaulting to 0.
+			\end{itemize}
+			\begin{scriptsize}
+				\begin{minted}[
+					bgcolor=BG,
+					frame=lines,
+					framesep=2mm,
+					baselinestretch=1.2,
+					linenos]
+					{python}
+					s = socket.socket (socket_family, socket_type, protocol=0)
+				\end{minted}
+			\end{scriptsize}
+		\end{column}
+	\end{columns}
+\end{frame}
+
+%------------------------------------------------
+\begin{frame}[fragile]
+	\frametitle{Socket Programming}
+	\begin{columns}[c]
+		\begin{column}{30cm}
+			\vspace{.1cm}
+			\begin{scriptsize}
+				\begin{minted}[
+				bgcolor=BG,
+				frame=lines,
+				framesep=2mm,
+				baselinestretch=1.2,
+				linenos]
+				{python}
+				import socket               # Import socket module
+				
+				s = socket.socket()         # Create a socket object
+				host = socket.gethostname() # Get local machine name
+				port = 12345                # Reserve a port for your service.
+				s.bind((host, port))        # Bind to the port
+				
+				s.listen(5)                 # Now wait for client connection.
+				while True:
+				    c, addr = s.accept()     # Establish connection with client.
+				    print('Got connection from %s' % addr)
+				    c.send('Thank you for connecting')
+				    c.close()                # Close the connection
+				\end{minted}
+			\end{scriptsize}
 		\end{column}
 	\end{columns}
 \end{frame}
