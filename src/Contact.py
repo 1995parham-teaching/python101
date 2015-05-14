@@ -16,39 +16,38 @@ class Contact:
         self.job = job
         self.__private = 1
 
-    def getname(self):
+    def get_name(self):
         return self.lastName + " " + self.firstName
 
     @staticmethod
     def static_method():
         return "Hello"
 
-    def new_method():
-        return "bye"
+    def unbound_method():
+        return "Bye"
 
 
 contact = Contact("Parham", "Alvani", "Nothing")
 print(contact.firstName, contact.lastName)
-print(contact.getname())
+print(contact.get_name())
 print(contact.job)
 
 print("==================")
 print(contact.static_method())
-print(Contact.new_method())
+print(Contact.unbound_method())
 print("==================")
 
 
 class Student(Contact):
     def __init__(self, lname, fname):
-        super(Student, self).__init__ \
-            (lname, fname, 'Student')
+        super(Student, self).__init__(lname, fname, 'Student')
 
-    def getname(self):
-        return "New getname"
+    def get_name(self):
+        return "New get_name() method"
 
 
 student = Student("Alvani", "Parham")
-print(student.getname())
+print(student.get_name())
 
 
 class Worker(Contact):
