@@ -23,5 +23,6 @@ while run:
         data = client.recv(1024)
         if not data:
             break
+        print("data =", data)
         client.send(data)
     client.close()
