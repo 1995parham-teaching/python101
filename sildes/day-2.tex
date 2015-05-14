@@ -635,7 +635,60 @@
 	\frametitle{Multithreading}
 	\begin{columns}[c]
 		\begin{column}{30cm}
-			\vspace{.1cm}
+			\begin{scriptsize}
+				\begin{minted}[
+				bgcolor=BG,
+				frame=lines,
+				framesep=1mm,
+				baselinestretch=1.2,
+				linenos]
+				{python}
+				class myThread (threading.Thread):
+				    def __init__(self, threadID, name, counter):
+				        threading.Thread.__init__(self)
+				        self.threadID = threadID
+				        self.name = name
+				        self.counter = counter
+				    def run(self):
+				        print("Starting " + self.name)
+				        print_time(self.name, self.counter, 5)
+				        print("Exiting " + self.name)
+				
+				def print_time(threadName, delay, counter):
+				    while counter:
+				        time.sleep(delay)
+				        print("%s: %s" % (threadName, time.ctime(time.time())))
+				        counter -= 1
+				\end{minted}
+			\end{scriptsize}	
+		\end{column}
+	\end{columns}
+\end{frame}
+
+%------------------------------------------------
+\begin{frame}[fragile]
+	\frametitle{Multithreading}
+	\begin{columns}[c]
+		\begin{column}{30cm}
+			\begin{scriptsize}
+				\begin{minted}[
+				bgcolor=BG,
+				frame=lines,
+				framesep=1mm,
+				baselinestretch=1.2,
+				linenos]
+				{python}
+				# Create new threads
+				thread1 = myThread(1, "Thread-1", 1)
+				thread2 = myThread(2, "Thread-2", 2)
+				
+				# Start new Threads
+				thread1.start()
+				thread2.start()
+				
+				print("Exiting Main Thread")
+				\end{minted}
+			\end{scriptsize}	
 		\end{column}
 	\end{columns}
 \end{frame}
