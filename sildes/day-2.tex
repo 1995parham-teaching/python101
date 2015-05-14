@@ -124,7 +124,7 @@
 				baselinestretch=1.2,
 				linenos]
 				{python}
-				name = input("Enter your input: ");
+				name = input("Enter your input: ")
 				print("Received input is : ", name)
 				\end{minted}
 			\end{scriptsize}
@@ -134,43 +134,58 @@
 
 %------------------------------------------------
 \begin{frame}
-	\frametitle{Lists}
+	\frametitle{File IO}
 	\begin{columns}[c]
 		\begin{column}{30cm}
 			\vspace{.1cm}
 			\begin{itemize}
 				\justifying
-				\item The most basic data structure in Python is the sequence.
-				\item Each element of a sequence is assigned a number - its position or index.
-				\item The first index is zero, the second index is one, and so forth.
+				\item The open Function
+				\item The file Object
+				\item The close() Method
+				\item The write() Method
+				\item The read() Method			
 			\end{itemize}
 		\end{column}
 	\end{columns}
-	\vspace{.5cm}
-	\hspace*{5.5cm} \includegraphics[width=5cm]{figs/list.jpg}	
 \end{frame}
 
 %------------------------------------------------
-\begin{frame}
-	\frametitle{Tuples}
+\begin{frame}[fragile]
+	\frametitle{The open Function}
 	\begin{columns}[c]
 		\begin{column}{30cm}
-			\vspace{.05cm}
+			\vspace{.1cm}
 			\begin{itemize}
-				\justifying
-				\item A tuple is a sequence of immutable Python objects.
-				\item Tuples are sequences, just like lists.
-				\item The differences between tuples and lists are:
-				\begin{itemize}
-						\item the tuples cannot be changed unlike lists
-						\item tuples use parentheses, whereas lists use square brackets.
-				\end{itemize}
+				\item Before you can read or write a file, \\
+				you have to open it using Python's built-in open() function.
+				\item This function creates a file object, which would be utilized \\
+				to call other support methods associated with it.
 			\end{itemize}
+			\begin{scriptsize}
+				\begin{minted}[
+				bgcolor=BG,
+				frame=lines,
+				framesep=2mm,
+				baselinestretch=1.2,
+				linenos]
+				{python}
+				file object = open(file_name [, access_mode][, buffering])
+				\end{minted}
+				\begin{minted}[
+				bgcolor=BG,
+				frame=lines,
+				framesep=2mm,
+				baselinestretch=1.2,
+				linenos]
+				{python}
+				fo = open("foo.txt", "w")
+				\end{minted}
+			\end{scriptsize}
 		\end{column}
 	\end{columns}
-	\vspace{.1cm}
-	\hspace*{5.5cm} \includegraphics[width=5cm]{figs/tuple.jpg}
 \end{frame}
+
 
 %------------------------------------------------
 \begin{frame}
