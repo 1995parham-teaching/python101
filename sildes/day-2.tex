@@ -592,7 +592,7 @@
 				s.listen(5)                 # Now wait for client connection.
 				while True:
 				    c, addr = s.accept()     # Establish connection with client.
-				    print('Got connection from %s:%d' % addr)
+				    print('Got connection from', addr)
 				    c.send('Thank you for connecting')
 				    c.close()                # Close the connection
 				\end{minted}
@@ -626,6 +626,16 @@
 				s.close                     # Close the socket when done
 				\end{minted}
 			\end{scriptsize}
+		\end{column}
+	\end{columns}
+\end{frame}
+
+%------------------------------------------------
+\begin{frame}[fragile]
+	\frametitle{Multithreading}
+	\begin{columns}[c]
+		\begin{column}{30cm}
+			\vspace{.1cm}
 		\end{column}
 	\end{columns}
 \end{frame}
