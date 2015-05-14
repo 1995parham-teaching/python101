@@ -17,6 +17,11 @@ class Contact:
         self.__private = 1
 
 
+contact = Contact("Parham", "Alvani", "Nothing")
+print(contact.firstName, contact.lastName)
+print(contact.job)
+
+
 class Student(Contact):
     def __init__(self, lname, fname):
         super(Student, self).__init__(lname, fname, 'Student')
