@@ -11,7 +11,7 @@ __author__ = 'Parham Alvani'
 
 def square(x):
     if not isinstance(x, int):
-        print("error !")
+        print("Error: x is a %s instead of int." % type(x))
     else:
         return x * x
 
