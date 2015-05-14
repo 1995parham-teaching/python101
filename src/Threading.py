@@ -29,8 +29,6 @@ class myThread(threading.Thread):
 
 def print_time(thread_name, delay, counter):
     while counter:
-        if exitFlag:
-            thread.exit()
         time.sleep(delay)
         print("%s: %s" % (thread_name, time.ctime(time.time())))
         counter -= 1
