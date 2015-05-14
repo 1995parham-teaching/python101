@@ -447,7 +447,7 @@
 				        # Adding this functions to make them so.
 				        return self
 				
-				    def next(self):
+				    def __next__(self):
 				        if self.i < self.n:
 				            i = self.i
 				            self.i += 1
@@ -458,6 +458,16 @@
 			\end{scriptsize}
 		\end{column}
 	\end{columns}
+\end{frame}
+
+%------------------------------------------------
+\begin{frame}
+	\frametitle{Iterators \& Generators}
+	\begin{Huge}
+		\begin{center}
+			\usebeamercolor[fg]{title}If both iteratable and iterator are the same object, it is consumed in a single iteration.
+		\end{center}
+	\end{Huge}
 \end{frame}
 
 %------------------------------------------------
