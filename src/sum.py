@@ -16,9 +16,9 @@ def sum1(*args):
     return answer
 
 
-def sum2(list):
+def sum2(number_list):
     answer = 0
-    for i in list:
+    for i in number_list:
         answer += i
     return answer
 
@@ -34,7 +34,7 @@ def func(**kwargs):
         print(kwargs[i])
 
 
-print(func(1, 2, 3))
+print(func(A=1, B=2, C=3))
 
 
 
