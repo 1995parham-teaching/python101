@@ -107,69 +107,27 @@
 \subsection{}
 
 %------------------------------------------------
-\begin{frame}
-\begin{columns}
-	\begin{column}{10cm}
-		\vspace{2cm}
-		\begin{block}{
-				\centering\textcolor{darkred}{What is python...}}
-				\justifying
-				Python is a high-level, interpreted, interactive and object-oriented scripting language. Python is designed to be highly readable..\\
-		\end{block}
-	\end{column}
-\end{columns}
-\vspace{.75cm}
-\hspace*{8.5cm}\includegraphics[width=3cm]{figs/python.jpeg}
-\end{frame}
-
-%------------------------------------------------
-\begin{frame}
-	\frametitle{Variable Types}
+\begin{frame}[fragile]
+	\frametitle{Keyboard Input}
 	\begin{columns}[c]
 		\begin{column}{30cm}
 			\vspace{.1cm}
 			\begin{itemize}
-				\justifying
-				\item Numbers
-				\item String
-				\item List
-				\item Tuple
-				\item Dictionary
+				\item The input() function reads a line from sys.stdin and \\
+				 returns it with the trailing newline stripped.
 			\end{itemize}
-		\end{column}
-	\end{columns}
-	\vspace{.5cm}
-	\hspace*{5.5cm} \includegraphics[width=5cm]{figs/python-types.jpg}
-\end{frame}
-
-%------------------------------------------------
-\begin{frame}
-	\frametitle{Numbers}
-	\begin{columns}[c]
-		\begin{column}{30cm}
-			\vspace{.1cm}
-			\begin{itemize}
-				\justifying
-				\item Number data types store numeric values.
-				\item They are immutable data types, means that changing the value of \\
-				 a number data type results in a newly allocated object.
-			\end{itemize}
-		\end{column}
-	\end{columns}
-\end{frame}
-
-%------------------------------------------------
-\begin{frame}
-	\frametitle{Strings}
-	\begin{columns}[c]
-		\begin{column}{30cm}
-			\vspace{.1cm}
-			\begin{itemize}
-				\justifying
-				\item Strings are among the most popular types in Python.
-				\item We can create them simply by enclosing characters in quotes.
-				\item Python treats single quotes the same as double quotes.
-			\end{itemize}
+			\begin{scriptsize}
+				\begin{minted}[
+				bgcolor=BG,
+				frame=lines,
+				framesep=2mm,
+				baselinestretch=1.2,
+				linenos]
+				{python}
+				name = input("Enter your input: ");
+				print("Received input is : ", name)
+				\end{minted}
+			\end{scriptsize}
 		\end{column}
 	\end{columns}
 \end{frame}
