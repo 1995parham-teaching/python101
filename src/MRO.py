@@ -29,14 +29,27 @@ class Mystery(Novel):
     def read(self):
         return "Page %d and I still don't know how dit it!" % self.page
 
+class New(Mystery, Book):
+    pass
 
-book1 = Book("Pro Python")
-print(book1.read())
-book1.bookmark(page=52)
-print(book1.read())
-book2 = Novel('pride and prejudice')
-print(book2.read())
-book3 = Mystery('Murder on the Orient Express')
-print(book3.read())
-book3.bookmark(page=352)
-print(book3.read())
+book4 = New("Hello")
+print(book4.read())
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

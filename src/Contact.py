@@ -16,28 +16,42 @@ class Contact:
         self.job = job
         self.__private = 1
 
+    def getname(self):
+        return self.lastName + " " + self.firstName
+
+    @staticmethod
+    def static_method():
+        return "Hello"
+
+    def new_method():
+        return "bye"
+
 
 contact = Contact("Parham", "Alvani", "Nothing")
 print(contact.firstName, contact.lastName)
+print(contact.getname())
 print(contact.job)
+
+print("==================")
+print(contact.static_method())
+print(Contact.new_method())
+print("==================")
 
 
 class Student(Contact):
     def __init__(self, lname, fname):
-        super(Student, self).__init__(lname, fname, 'Student')
+        super(Student, self).__init__ \
+            (lname, fname, 'Student')
+
+    def getname(self):
+        return "New getname"
+
+
+student = Student("Alvani", "Parham")
+print(student.getname())
 
 
 class Worker(Contact):
     def __init__(self, lname, fname):
         Contact.__init__(self, lname, fname, 'Worker')
 
-
-student = Student("Alvani", "Parham")
-print(student.firstName, student.lastName)
-print(student.job)
-print(student._Contact__private)
-
-worker = Worker("Alvani", "Parham")
-print(worker.firstName, worker.lastName)
-print(worker.job)
-print(worker._Contact__private)

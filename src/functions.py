@@ -10,7 +10,10 @@ __author__ = 'Parham Alvani'
 
 
 def square(x):
-    return x * x
+    if not isinstance(x, int):
+        print("error !")
+    else:
+        return x * x
 
 
 print(square(10))
