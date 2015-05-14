@@ -29,11 +29,13 @@ class Mystery(Novel):
     def read(self):
         return "Page %d and I still don't know how dit it!" % self.page
 
+
 class New(Mystery, Book):
     pass
 
-book4 = New("Hello")
-print(book4.read())
+
+book = New("The Little Prince")
+print(book.read())
 
 
 
