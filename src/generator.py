@@ -34,3 +34,8 @@ def fibonacci(count):
 print("Fibonacci sequence: ")
 for x in fibonacci(10):
     print(x)
+
+print("======================")
+
+fibonacci_range = fibonacci(10)
+print(next(fibonacci_range))
