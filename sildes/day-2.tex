@@ -292,25 +292,30 @@
 \end{frame}
 
 %------------------------------------------------
-\begin{frame}
-	\frametitle{Functions}
+\begin{frame}[fragile]
+	\frametitle{The readlines() Method}
 	\begin{columns}[c]
 		\begin{column}{30cm}
 			\vspace{.1cm}
 			\begin{itemize}
-				\justifying
-				\item Function blocks begin with the keyword \textcolor{orange}{def}, \\
-				followed by the function name and parentheses.
-				\item Any input parameters or arguments should be placed \\
-				within these parentheses.
-				\item The first statement of a function can be an optional statement - \\
-				the documentation string of the function or docstring.
+				\item Read until EOF using readline() and return a \\
+				 list containing the lines thus read.
 			\end{itemize}
+			\begin{scriptsize}
+				\begin{minted}[
+				bgcolor=BG,
+				frame=lines,
+				framesep=2mm,
+				baselinestretch=1.2,
+				linenos]
+				{python}
+				fileObject.readlines([sizehint])
+				\end{minted}
+			\end{scriptsize}
 		\end{column}
 	\end{columns}
-	\vspace{.1cm}
-	\hspace*{5cm} \includegraphics[width=5cm]{figs/functions.jpg}
 \end{frame}
+
 
 %------------------------------------------------
 \begin{frame}[fragile]
