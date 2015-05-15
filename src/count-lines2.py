@@ -1,6 +1,6 @@
 # In The Name Of God
 # ========================================
-# [] File Name : lines.py
+# [] File Name : count-lines2.py
 #
 # [] Creation Date : 15-05-2015
 #
