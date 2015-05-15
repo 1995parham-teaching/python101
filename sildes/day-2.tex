@@ -530,10 +530,15 @@
 			\vspace{.1cm}
 			\begin{itemize}
 				\justifying
-				\item The current directory.
-				\item Python then searches each directory in the shell variable PYTHONPATH.
-				\item If all else fails, Python checks the default path. \\
-				On UNIX, this default path is normally /usr/local/lib/python/.
+				\item Python's from statement lets you import specific attributes from a \\
+				 module into the current namespace.
+				\item Locating Modules
+				\begin{itemize}
+					\item The current directory.
+					\item Python then searches each directory in the shell variable PYTHONPATH.
+					\item If all else fails, Python checks the default path. \\
+					On UNIX, this default path is normally /usr/local/lib/python/.
+				\end{itemize}
 			\end{itemize}
 		\end{column}
 	\end{columns}
@@ -549,6 +554,9 @@
 				\justifying
 				\item Python provides two levels of access to network services
 				\item To create a socket, you must use the socket.socket()
+				\item See
+				\textcolor{blue}{\href{https://docs.python.org/3.0/library/socket.html}{here}}
+				for more details and functions.
 				\item \textcolor{green}{socket\_family}: This is either AF\_UNIX or AF\_INET.
 				\item \textcolor{green}{socket\_type}: This is either SOCK\_STREAM or SOCK\_DGRAM.
 				\item \textcolor{green}{protocol}: This is usually left out, defaulting to 0.
