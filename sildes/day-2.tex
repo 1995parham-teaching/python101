@@ -343,11 +343,11 @@
 				>>> x = iter([1, 2, 3])
 				>>> x
 				<listiterator object at 0x1004ca850>
-				>>> x.next()
+				>>> next(x)
 				1
-				>>> x.next()
+				>>> next(x)
 				2
-				>>> x.next()
+				>>> next(x)
 				3
 				\end{minted}
 			\end{scriptsize}
@@ -381,7 +381,7 @@
 				    def __iter__(self):
 				        return self
 				
-				    def next(self):
+				    def __next__(self):
 				        if self.i < self.n:
 				            i = self.i
 				            self.i += 1
