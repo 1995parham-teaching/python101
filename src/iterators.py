@@ -27,9 +27,12 @@ class YRange:
 
 
 y = YRange(3)
-print(next(y))
-print(next(y))
-print(next(y))
+print(list(y))
+print(list(y))
+#y = iter(y)
+#print(next(y))
+#print(next(y))
+#print(next(y))
 
 
 class ZRange:
@@ -59,10 +62,9 @@ class ZRangeIter:
             raise StopIteration()
 
 
-y = YRange(5)
-print(list(y))
-print(list(y))
-
 z = ZRange(5)
+#zi = iter(z)
+#print(next(zi))
+
 print(list(z))
 print(list(z))
