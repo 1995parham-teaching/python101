@@ -33,6 +33,8 @@ while True:
             data = client.recv(1024)
             if not data:
                 client.close()
+                client_list.remove(client)
+                read_list_check.remove(client)
                 continue
             print("data =", data)
             client.send(data)
