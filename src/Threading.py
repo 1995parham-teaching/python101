@@ -12,7 +12,7 @@ import threading
 import time
 
 
-class myThread(threading.Thread):
+class MyThread(threading.Thread):
     def __init__(self, thread_id, name, counter):
         threading.Thread.__init__(self)
         self.threadID = thread_id
@@ -34,8 +34,8 @@ def print_time(thread_name, delay, counter):
         counter -= 1
 
 # Create new threads
-thread1 = myThread(1, "Thread-1", 1)
-thread2 = myThread(2, "Thread-2", 2)
+thread1 = MyThread(1, "Thread-1", 1)
+thread2 = MyThread(2, "Thread-2", 2)
 lock = threading.Lock()
 
 # Start new Threads
