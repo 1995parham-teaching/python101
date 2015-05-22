@@ -29,6 +29,7 @@ while True:
         client_list.append(client)
 
     for client in client_list:
+        # Read data from client sockets
         if read_list_ready.count(client) > 0:
             data = client.recv(1024)
             if not data:
