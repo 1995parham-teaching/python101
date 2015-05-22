@@ -25,3 +25,4 @@ class PluginMount(type):
             # Since the plugins attribute already exists, this is an
             # individual plugin, and it need to be registered
             cls.plugins.append(cls)
+        super(PluginMount, cls).__init__(name, bases, attrs)
