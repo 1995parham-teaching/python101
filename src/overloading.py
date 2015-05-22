@@ -27,4 +27,5 @@ h = Hello()
 print(str(h))
 print(int(h))
 print(h + 10)
-print(10 + h)
+# Uncomment following in order to receive error
+# print(10 + h)
