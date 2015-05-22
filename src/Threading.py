@@ -21,9 +21,11 @@ class MyThread(threading.Thread):
 
     def run(self):
         print("Starting " + self.name)
-        lock.acquire()
+        # lock.acquire()
+        sem.acquire()
         print_time(self.name, self.counter, 5)
-        lock.release()
+        sem.release()
+        # lock.release()
         print("Exiting " + self.name)
 
 
@@ -36,7 +38,8 @@ def print_time(thread_name, delay, counter):
 # Create new threads
 thread1 = MyThread(1, "Thread-1", 1)
 thread2 = MyThread(2, "Thread-2", 2)
-lock = threading.Lock()
+# lock = threading.Lock()
+sem = threading.Semaphore(1)
 
 # Start new Threads
 thread1.start()
