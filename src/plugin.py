@@ -26,3 +26,28 @@ class PluginMount(type):
             # individual plugin, and it need to be registered
             cls.plugins.append(cls)
         super(PluginMount, cls).__init__(name, bases, attrs)
+
+
+class InputValidator(metaclass=PluginMount):
+    def validate(self, string):
+        """
+        :param string: input string
+        :type string: str
+        :return: boolean indicate validation result
+        :rtype: bool
+        """
+        raise NotImplementedError
+
+
+class AsciiInputValidator(InputValidator):
+    def validate(self, string):
+        """
+        :param string: input string
+        :type string: str
+        :return: boolean indicate validation result
+        :rtype: bool
+        """
+        return True
+
+
+print(InputValidator.plugins)
