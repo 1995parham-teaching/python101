@@ -47,7 +47,31 @@ class AsciiInputValidator(InputValidator):
         :return: boolean indicate validation result
         :rtype: bool
         """
-        return True
+        try:
+            string.encode('ascii')
+        except UnicodeError:
+            return False
+        else:
+            return True
+
+
+class UTF8InputValidator(InputValidator):
+    def validate(self, string):
+        """
+        :param string: input string
+        :type string: str
+        :return: boolean indicate validation result
+        :rtype: bool
+        """
+        try:
+            string.encode('utf-8')
+        except UnicodeError:
+            return False
+        else:
+            return True
 
 
 print(InputValidator.plugins)
+print(AsciiInputValidator().validate("Hello"))
+print(AsciiInputValidator().validate('سلام'))
+print(UTF8InputValidator().validate('سلام'))
