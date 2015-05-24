@@ -22,10 +22,12 @@ class Hello:
     def __add__(self, other):
         return other
 
+    def __radd__(self, other):
+        return other
+
 
 h = Hello()
 print(str(h))
 print(int(h))
 print(h + 10)
-# Uncomment following in order to receive error
-# print(10 + h)
+print(10 + h)

@@ -37,22 +37,3 @@ class New(Mystery, Book):
 book = New("The Little Prince")
 print(New.__mro__)
 print(book.read())
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
