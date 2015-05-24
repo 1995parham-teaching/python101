@@ -22,9 +22,15 @@ import io
 
 # Text IO
 file = io.open("Hello.txt", "w")
+if isinstance(file, io.TextIOBase):
+    print("Text IO....")
 
 # Binary IO
 file = io.open("Hello.txt", "wb")
+if isinstance(file, io.BufferedIOBase):
+    print("Binary IO....")
 
 # Raw IO
 file = io.open("Hello.txt", "rb", buffering=0)
+if isinstance(file, io.RawIOBase):
+    print("Raw IO....")
