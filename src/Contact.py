@@ -53,4 +53,3 @@ print(student.get_name())
 class Worker(Contact):
     def __init__(self, lname, fname):
         Contact.__init__(self, lname, fname, 'Worker')
-

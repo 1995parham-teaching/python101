@@ -49,7 +49,7 @@ class ZRangeIter:
         self.n = n
 
     def __iter__(self):
-        # Iterators are iterables too.
+        # Iterators are iterable too.
         # Adding this functions to make them so.
         return self
 
