@@ -16,4 +16,12 @@ def square(x):
         return x * x
 
 
+def square2(x):
+    if not hasattr(x, '__mul__'):
+        print("Error: your object do not support multiplication")
+    else:
+        return x * x
+
+
 print(square(10))
+print(square2(10.1))
