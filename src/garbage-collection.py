@@ -20,5 +20,6 @@ b = a
 b.append(4)
 print(a)
 print(b)
+print(a is b)
 del a
 print(b)
