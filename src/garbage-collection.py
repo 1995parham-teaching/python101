@@ -23,3 +23,14 @@ print(b)
 print(a is b)
 del a
 print(b)
+
+
+class DelMe:
+    def __del__(self):
+        print("I am deleting")
+
+
+a = DelMe()
+del a
+b = DelMe()
+b = None
