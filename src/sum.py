@@ -9,48 +9,32 @@
 __author__ = 'Parham Alvani'
 
 
-def sum1(*args):
+def var_sum(*args):
     answer = 0
     for i in args:
         answer += i
     return answer
 
 
-def sum2(number_list):
+def list_sum(number_list):
     answer = 0
     for i in number_list:
         answer += i
     return answer
 
 
-print(sum1(1, 2, 3, 4, 5, 6))
-print(sum1())
+print(var_sum(1, 2, 3, 4, 5, 6))
+print(var_sum())
 
-print(sum2([1, 2, 3]))
-
-
-def func(**kwargs):
-    for i in kwargs:
-        print(kwargs[i])
+print(list_sum([1, 2, 3]))
 
 
-print(func(A=1, B=2, C=3))
+def dic_sum(**kwargs):
+    answer = 0
+    for key, value in kwargs.items():
+        print('[' + str(key) + ']' + ' = ' + str(value))
+        answer += value
+    return answer
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+print(dic_sum(A=1, B=2, C=3))
