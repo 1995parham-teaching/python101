@@ -37,5 +37,18 @@ for x in fibonacci(10):
 
 print("======================")
 
-fibonacci_range = fibonacci(10)
-print(next(fibonacci_range))
+fibonacci_generator = fibonacci(10)
+print(next(fibonacci_generator))
+
+
+def yielder():
+    yield 1
+    yield 2
+    yield 3
+
+
+print("Yielder sequence: ")
+for x in yielder():
+    print(x)
+
+print("===================")
