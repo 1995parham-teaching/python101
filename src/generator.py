@@ -42,13 +42,18 @@ print(next(fibonacci_generator))
 
 
 def yielder():
+    print("-0-")
     yield 1
+    print("-1-")
     yield 2
+    print("-2-")
     yield 3
+    print("-3-")
 
 
 print("Yielder sequence: ")
 for x in yielder():
     print(x)
+    print("*******")
 
 print("===================")
