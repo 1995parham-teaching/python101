@@ -21,4 +21,3 @@ for i in range(2, number // 2):
         break
 else:
     print("your number is prime")
-
