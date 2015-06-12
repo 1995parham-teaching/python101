@@ -18,3 +18,6 @@ class SimpleMetaClass(type):
 
 class Example(metaclass=SimpleMetaClass):
     pass
+
+class SubExample(Example):
+    pass
