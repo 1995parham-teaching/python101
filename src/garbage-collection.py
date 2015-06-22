@@ -8,6 +8,8 @@
 # =======================================
 __author__ = 'Parham Alvani'
 
+import gc
+
 x = 10
 print(id(x))
 x = "foo"
@@ -32,5 +34,6 @@ class DelMe:
 
 a = DelMe()
 del a
+print("After deleting object a")
 b = DelMe()
 b = None
