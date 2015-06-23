@@ -34,6 +34,7 @@ class DelMe:
 
 a = DelMe()
 del a
+gc.collect()
 print("After deleting object a")
 b = DelMe()
 b = None
