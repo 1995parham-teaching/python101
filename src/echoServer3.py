@@ -9,6 +9,22 @@
 __author__ = 'Parham Alvani'
 
 import socket
+import threading
+
+
+class Handler(threading.Thread):
+    def __init__(self, client_socket):
+        threading.Thread.__init__(self)
+        self.client_socket = client_socket
+
+    def run(self):
+        while True:
+            buff = self.client_socket.recv(1024)
+            if buff:
+                self.client_socket.send(buff)
+            else:
+                break
+
 
 sock = socket.socket(socket.AF_INET, socket.SOCK_STREAM, 0)
 sock.bind(('', 1373))
@@ -16,10 +32,4 @@ sock.listen(5)
 
 while True:
     client = sock.accept()
-    client = client[0]
-    while True:
-        buff = client.recv(1024)
-        if buff:
-            client.send(buff)
-        else:
-            break
+    Handler(client[0]).start()
