@@ -6,4 +6,4 @@ Python 2- and my presentation slides at the 7th Amirkabir Linux Festival 2015.
 * [Dr.Bakhshi](http://ceit.aut.ac.ir/~bakhshis/) (Helped in holding classes) 
 * [Dr.Payberah](http://www.sics.se/~amir/) (Contributed to creating slides.)
 * [S.M.M.Ahmadpanah](http://ceit.aut.ac.ir/~ahmadpanah/) (Contributed to editing slides.)
-* [E.Jalalpoor](https://ir.linkedin.com/pub/elahe-jalalpoor/b9/8/398?domainCountryName=Iran&csrfToken=guest_token&domainCountryCode=irt ) (Contributed to editing slides.)
+* [E.Jalalpour](http://ceit.aut.ac.ir/~jalalpour/) (Contributed to editing slides.)
