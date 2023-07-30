@@ -7,6 +7,16 @@
 ## Introduction
 
 This repository contains sample codes and presentation slides for python workshop.
+It started by an introduction session(s) in which we introduced and work with the following concepts:
+
+- Introduction
+- Control Flow
+- Functions
+- Class
+
+## Companion materials
+
+- [python101](https://github.com/1995parham-learning/python101)
 
 ## Presented At
 
