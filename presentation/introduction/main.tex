@@ -1,5 +1,7 @@
 \documentclass{../py-lecture}
 
+\subtitle{Introduction}
+
 \begin{document}
 
 \begin{frame}
@@ -96,6 +98,8 @@
 	\centering\includegraphics[width=.4\textwidth]{img/dictionary.jpg}
 \end{frame}
 
+\section{Flow Control}
+
 \begin{frame}
 	\frametitle{Flow Control}
   \begin{itemize}
@@ -106,6 +110,8 @@
   \end{itemize}
 	\centering\includegraphics[width=.4\textwidth]{img/flow-control.jpg}
 \end{frame}
+
+\section{Functions}
 
 \begin{frame}
 	\frametitle{Functions}
@@ -136,6 +142,36 @@ def printme( statement ):
     print statement
     return
   \end{minted}
+\end{frame}
+
+\begin{frame}[fragile]
+	\frametitle{Lambda}
+  \begin{itemize}
+    \item Python supports simple anonymous functions through the lambda form.
+    \item The executable body of the lambda must be an expression
+    and can't be a statement, which is a restriction that limits its utility.
+  \end{itemize}
+  \begin{minted}[bgcolor=Black]{python}
+foo = lambda x: x * x
+  \end{minted}
+	\centering \includegraphics[width=.3\textwidth]{img/lambda.png}
+\end{frame}
+
+\section{Classes}
+
+\begin{frame}
+	\frametitle{Classes}
+  \begin{itemize}
+    \item The class statement creates a new class definition.
+    \item The name of the class immediately follows the keyword \textcolor{Orange}{class}
+    followed by a colon as follows
+  \end{itemize}
+	\centering \includegraphics[width=.3\textwidth]{img/class.jpg}
+\end{frame}
+
+\begin{frame}[t,fragile,allowframebreaks]
+	\frametitle{Classes (Cont'd)}
+  \inputminted[bgcolor=Black,breaklines,breakanywhere]{python}{./src/employee.py}
 \end{frame}
 
 \end{document}
