@@ -188,28 +188,6 @@ foo = lambda x: x * x
 \end{frame}
 
 \begin{frame}
-	\frametitle{Inheritance}
-  \begin{itemize}
-    \item Instead of starting from scratch, you can create a class by deriving it
-    from a preexisting class by listing the parent class in parentheses
-    after the new class name.
-  \end{itemize}
-	\centering \includegraphics[width=.4\textwidth]{img/inheritance.jpg}
-\end{frame}
-
-\begin{frame}[fragile]
-	\frametitle{Inheritance (Cont'd)}
-  \begin{minted}[bgcolor=Black]
-  {python}
-class SubClassName (ParentClass1[, ParentClass2, ...]):
-    """
-    optional class documentation string
-    """
-    # class_suite
-  \end{minted}
-\end{frame}
-
-\begin{frame}
 	\frametitle{Special method names}
   \par
   A class can implement certain operations that are invoked by special syntax (such as arithmetic operations or subscripting and slicing) by defining methods with special names.
@@ -275,6 +253,36 @@ class SubClassName (ParentClass1[, ParentClass2, ...]):
   \end{columns}
 \end{frame}
 
+
+\begin{frame}
+	\frametitle{Base Overloading Methods (Cont'd)}
+  These methods are called to implement the augmented arithmetic assignments (+=, -=, *=, @=, /=, //=, \%=, **=, <<=, >>=, \&=, \^=, |=).
+  These methods should attempt to do the operation in-place (modifying self) and return the result (which could be, but does not have to be, self).
+  \begin{columns}
+    \begin{column}{.5\textwidth}
+      \begin{itemize}
+        \item \mintinline{python}|__iadd__(self, other)|
+        \item \mintinline{python}|__isub__(self, other)|
+        \item \mintinline{python}|__imul__(self, other)|
+        \item \mintinline{python}|__imatmul__(self, other)|
+        \item \mintinline{python}|__itruediv__(self, other)|
+        \item \mintinline{python}|__ifloordiv__(self, other)|
+        \item \mintinline{python}|__imod__(self, other)|
+      \end{itemize}
+    \end{column}
+    \begin{column}{.5\textwidth}
+      \begin{itemize}
+        \item \mintinline{python}|__ipow__(self, other[, modulo])|
+        \item \mintinline{python}|__ilshift__(self, other)|
+        \item \mintinline{python}|__irshift__(self, other)|
+        \item \mintinline{python}|__iand__(self, other)|
+        \item \mintinline{python}|__ixor__ (self, other)|
+        \item \mintinline{python}|__ior__(self, other)|
+      \end{itemize}
+    \end{column}
+  \end{columns}
+\end{frame}
+
 \begin{frame}
 	\frametitle{Data Hiding}
 			\begin{itemize}
@@ -291,6 +299,48 @@ class SubClassName (ParentClass1[, ParentClass2, ...]):
 \begin{frame}[fragile]
 	\frametitle{Data Hiding}
   \inputminted[bgcolor=Black,fontsize=\scriptsize]{python}{./src/secret_counter.py}
+\end{frame}
+
+\begin{frame}
+	\frametitle{Inheritance}
+  \begin{itemize}
+    \item Instead of starting from scratch, you can create a class by deriving it
+    from a preexisting class by listing the parent class in parentheses
+    after the new class name.
+  \end{itemize}
+	\centering \includegraphics[width=.4\textwidth]{img/inheritance.jpg}
+\end{frame}
+
+\begin{frame}[fragile]
+	\frametitle{Inheritance (Cont'd)}
+  \begin{minted}[bgcolor=Black]
+  {python}
+class SubClassName (ParentClass1[, ParentClass2, ...]):
+    """
+    optional class documentation string
+    """
+    # class_suite
+  \end{minted}
+\end{frame}
+
+\begin{frame}
+	\frametitle{Multiple Inheritance}
+  \begin{itemize}
+    \item Method Resolution Order (MRO)
+    \item C3 Algorithm
+  \end{itemize}
+	\centering \includegraphics[width=.3\textwidth]{img/multiple-inheritance.jpg}
+\end{frame}
+
+\begin{frame}
+	\frametitle{C3 linearization}
+    \begin{block}{}
+        The C3 superclass linearization is an algorithm used primarily
+        to obtain the order in which methods should
+        be inherited (the ``linearization'') in the presence of
+        \textcolor{Orange}{multiple inheritance}, and is often termed \textcolor{Orange}{\textbf{MRO}}
+        for Method Resolution Order.	
+			\end{block}		
 \end{frame}
 
 \end{document}
