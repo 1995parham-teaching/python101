@@ -235,11 +235,6 @@ class SubClassName (ParentClass1[, ParentClass2, ...]):
 
 \begin{frame}
 	\frametitle{Special method names (Cont'd)}
-  These are the so-called ``rich comparison'' methods,
-  and are called for comparison operators in preference to \mintinline{python}|__cmp__()| below.
-\end{frame}
-
-\begin{frame}
   \begin{itemize}
     \item \mintinline{python}|__format__(self, format_spec)|: Called by the format() built-in function, and by extension, evaluation of formatted string literals and the str.format() method, to produce a “formatted” string representation of an object.
   \end{itemize}
@@ -249,6 +244,48 @@ class SubClassName (ParentClass1[, ParentClass2, ...]):
   however most classes will either delegate formatting to one of the built-in types, or use a similar formatting option syntax.
 
   \letscode{https://github.com/1995parham-learning/python101/blob/main/format/main.py}
+\end{frame}
+
+\begin{frame}
+	\frametitle{Base Overloading Methods (Cont'd)}
+  These methods are called to implement the binary arithmetic operations (+, -, *, @, /, //, \%, divmod(), pow(), **, <<, >>, \&, \^, |)
+  \begin{columns}
+    \begin{column}{.5\textwidth}
+      \begin{itemize}
+        \item \mintinline{python}|__add__(self, other)|
+        \item \mintinline{python}|__sub__(self, other)|
+        \item \mintinline{python}|__mul__(self, other)|
+        \item \mintinline{python}|__matmul__(self, other)|
+        \item \mintinline{python}|__truediv__(self, other)|
+        \item \mintinline{python}|__floordiv__(self, other)|
+        \item \mintinline{python}|__mod__(self, other)|
+      \end{itemize}
+    \end{column}
+    \begin{column}{.5\textwidth}
+      \begin{itemize}
+        \item \mintinline{python}|__divmod__(self, other)|
+        \item \mintinline{python}|__pow__(self, other[, modulo])|
+        \item \mintinline{python}|__lshift__(self, other)|
+        \item \mintinline{python}|__rshift__(self, other)|
+        \item \mintinline{python}|__and__(self, other)|
+        \item \mintinline{python}|__xor__ (self, other)|
+        \item \mintinline{python}|__or__(self, other)|
+      \end{itemize}
+    \end{column}
+  \end{columns}
+\end{frame}
+
+\begin{frame}
+	\frametitle{Data Hiding}
+			\begin{itemize}
+				\item An object's attributes may or may not be visible outside \\
+				the class definition.
+				\item You need to name attributes with a double underscore prefix, and those \\
+				attributes then are not be directly visible to outsiders.
+				\item Python protects those members by internally changing the name to \\
+				include the class name.
+				\item You can access such attributes as \textcolor{Orange}{object.\_className\_\_attrName}
+			\end{itemize}
 \end{frame}
 
 \end{document}
