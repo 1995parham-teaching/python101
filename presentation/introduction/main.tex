@@ -12,25 +12,130 @@
 
 \section{Introduction}
 
-%------------------------------------------------
 \begin{frame}
-\begin{columns}
-	\begin{column}{10cm}
-		\vspace{2cm}
-		\begin{block}{
-				\centering\textcolor{darkgray}{What is python...}}
-				Python is a high-level, interpreted, interactive and object-oriented scripting language. Python is designed to be highly readable..
-		\end{block}
-	\end{column}
-\end{columns}
-\vspace{.75cm}
-\hspace*{8.5cm}\includegraphics[width=3cm]{img/python.jpeg}
+  \begin{block}{
+      \centering\textcolor{darkgray}{What is python\ldots}}
+      Python is a high-level, interpreted, interactive and object-oriented scripting language. Python is designed to be highly readable.
+  \end{block}
+  \vspace{.75cm}
+  \hspace*{8.5cm}\includegraphics[width=3cm]{img/python.jpeg}
 \end{frame}
 
-%------------------------------------------------
 \begin{frame}
 	\frametitle{Environment}
-	\hspace*{1.5cm}\includegraphics[width=10cm]{img/python-console-linux.png}
+	\includegraphics[width=\linewidth]{img/python-console-linux.png}
+\end{frame}
+
+\begin{frame}
+	\frametitle{Variable Types}
+  \begin{columns}
+    \begin{column}{0.5\textwidth}
+      \begin{itemize}
+        \item Numbers
+        \item String
+        \item List
+        \item Tuple
+        \item Dictionary
+      \end{itemize}
+    \end{column}
+    \begin{column}{0.5\textwidth}
+	    \includegraphics[width=\linewidth]{img/python-types.jpg}
+    \end{column}
+  \end{columns}
+\end{frame}
+
+\begin{frame}
+	\frametitle{Numbers}
+  \begin{itemize}
+    \item Number data types store numeric values.
+    \item They are immutable data types, means that changing the value of
+      a number data type results in a newly allocated object.
+  \end{itemize}
+\end{frame}
+
+\begin{frame}
+	\frametitle{Strings}
+  \begin{itemize}
+    \item Strings are among the most popular types in Python.
+    \item We can create them simply by enclosing characters in quotes.
+    \item Python treats single quotes the same as double quotes.
+  \end{itemize}
+\end{frame}
+
+\begin{frame}
+	\frametitle{Lists}
+  \begin{itemize}
+    \item The most basic data structure in Python is the sequence.
+    \item Each element of a sequence is assigned a number - its position or index.
+    \item The first index is zero, the second index is one, and so forth.
+  \end{itemize}
+	\centering\includegraphics[width=.4\textwidth]{img/list.jpg}	
+\end{frame}
+
+\begin{frame}
+	\frametitle{Tuples}
+  \begin{itemize}
+    \item A tuple is a sequence of immutable Python objects.
+    \item Tuples are sequences, just like lists.
+    \item The differences between tuples and lists are:
+    \begin{itemize}
+        \item the tuples cannot be changed unlike lists
+        \item tuples use parentheses, whereas lists use square brackets.
+    \end{itemize}
+  \end{itemize}
+	\centering\includegraphics[width=.4\textwidth]{img/tuple.jpg}
+\end{frame}
+
+\begin{frame}
+	\frametitle{Dictionary}
+  \begin{itemize}
+    \item Each key is separated from its value by a colon (:)
+    \item The items are separated by commas
+    \item The whole thing is enclosed in curly braces.
+  \end{itemize}
+	\centering\includegraphics[width=.4\textwidth]{img/dictionary.jpg}
+\end{frame}
+
+\begin{frame}
+	\frametitle{Flow Control}
+  \begin{itemize}
+    \item \mint{python}|if else|
+    \item \mint{python}|for|
+    \item \mint{python}|while|
+    \item \mint{python}|exceptions|
+  \end{itemize}
+	\centering\includegraphics[width=.4\textwidth]{img/flow-control.jpg}
+\end{frame}
+
+\begin{frame}
+	\frametitle{Functions}
+  \begin{itemize}
+    \item Function blocks begin with the keyword \textcolor{Orange}{def},
+    followed by the function name and parentheses.
+    \item Any input parameters or arguments should be placed
+    within these parentheses.
+    \item The first statement of a function can be an optional statement -
+    the documentation string of the function or docstring.
+  \end{itemize}
+	\centering \includegraphics[width=.4\textwidth]{img/functions.jpg}
+\end{frame}
+
+\begin{frame}[fragile]
+	\frametitle{Functions (Cont'd)}
+  \begin{minted}[bgcolor=Black]{python}
+def square(x):
+    return x * x
+  \end{minted}
+  \begin{minted}[bgcolor=Black]{python}
+def hello():
+    return "Hello"
+  \end{minted}
+  \begin{minted}[bgcolor=Black]{python}
+def printme( statement ):
+    "This prints a passed string into this function"
+    print statement
+    return
+  \end{minted}
 \end{frame}
 
 \end{document}
