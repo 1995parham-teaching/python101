@@ -1,5 +1,9 @@
 <h1 align="center"> Python 101 </h1>
 
+<p align="center">
+  <img alt="banner" src="./.github/assets/banner.png" height="200px" />
+</p>
+
 ## Introduction
 
 This repository contains sample codes and presentation slides for python workshop.
