@@ -24,7 +24,7 @@ It started by an introduction session(s) in which we introduced and work with th
 
 ## Special Thanks To
 
-- [Dr.Bakhshi](http://ceit.aut.ac.ir/~bakhshis/) (Helped in holding classes)
-- [Dr.Payberah](http://www.sics.se/~amir/) (Contributed to creating slides.)
-- [S.M.M.Ahmadpanah](http://ceit.aut.ac.ir/~ahmadpanah/) (Contributed to editing slides.)
-- [E.Jalalpour](http://ceit.aut.ac.ir/~jalalpour/) (Contributed to editing slides.)
+- [Dr.Bakhshi](https://github.com/Bahador-Bakhshi) (Helped in holding classes)
+- [Dr.Payberah](https://github.com/payberah) (Contributed to creating slides.)
+- [S.M.M.Ahmadpanah](https://github.com/smahmadpanah) (Contributed to editing slides.)
+- [E.Jalalpour](https://github.com/eljalalpour) (Contributed to editing slides.)
