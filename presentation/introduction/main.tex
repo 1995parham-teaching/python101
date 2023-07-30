@@ -213,6 +213,8 @@ class SubClassName (ParentClass1[, ParentClass2, ...]):
 	\frametitle{Special method names}
   \par
   A class can implement certain operations that are invoked by special syntax (such as arithmetic operations or subscripting and slicing) by defining methods with special names.
+  \par
+  This is Python’s approach to \textcolor{Orange}{operator overloading}, allowing classes to define their own behavior with respect to language operators.
 \end{frame}
 
 \begin{frame}
@@ -235,6 +237,18 @@ class SubClassName (ParentClass1[, ParentClass2, ...]):
 	\frametitle{Special method names (Cont'd)}
   These are the so-called ``rich comparison'' methods,
   and are called for comparison operators in preference to \mintinline{python}|__cmp__()| below.
+\end{frame}
+
+\begin{frame}
+  \begin{itemize}
+    \item \mintinline{python}|__format__(self, format_spec)|: Called by the format() built-in function, and by extension, evaluation of formatted string literals and the str.format() method, to produce a “formatted” string representation of an object.
+  \end{itemize}
+  \par
+  The \mintinline{python}|format_spec| argument is a string that contains a description of the formatting options desired.
+  The interpretation of the \mintinline{python}|format_spec| argument is up to the type implementing \mintinline{python}|__format__()|,
+  however most classes will either delegate formatting to one of the built-in types, or use a similar formatting option syntax.
+
+  \letscode{https://github.com/1995parham-learning/python101/blob/main/format/main.py}
 \end{frame}
 
 \end{document}
