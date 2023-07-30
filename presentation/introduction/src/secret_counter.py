@@ -1,5 +1,5 @@
 class SecretCounter:
-    __secret_count = 0
+    __secret_count: int = 0
 
     def inc(self):
         self.__secret_count += 1
