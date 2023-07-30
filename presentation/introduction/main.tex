@@ -103,10 +103,10 @@
 \begin{frame}
 	\frametitle{Flow Control}
   \begin{itemize}
-    \item \mint{python}|if else|
-    \item \mint{python}|for|
-    \item \mint{python}|while|
-    \item \mint{python}|exceptions|
+    \item \mintinline{python}|if else|
+    \item \mintinline{python}|for|
+    \item \mintinline{python}|while|
+    \item \mintinline{python}|exceptions|
   \end{itemize}
 	\centering\includegraphics[width=.4\textwidth]{img/flow-control.jpg}
 \end{frame}
@@ -207,6 +207,34 @@ class SubClassName (ParentClass1[, ParentClass2, ...]):
     """
     # class_suite
   \end{minted}
+\end{frame}
+
+\begin{frame}
+	\frametitle{Special method names}
+  \par
+  A class can implement certain operations that are invoked by special syntax (such as arithmetic operations or subscripting and slicing) by defining methods with special names.
+\end{frame}
+
+\begin{frame}
+	\frametitle{Special method names (Cont'd)}
+  \begin{itemize}
+    \item \mintinline{python}|__init__( self [,args...] )| : Called after the instance has been created (by \mintinline{python}|__new__()|), but before it is returned to the caller.
+    \item \mintinline{python}|__del__( self )| : Called when the instance is about to be destroyed. This is also called a finalizer or (improperly) a destructor.
+    \item \mintinline{python}|__repr__( self )| : Called by the \mintinline{python}|repr()| built-in function to compute the ``official'' string representation of an object.
+    \item \mintinline{python}|__str__( self )| : Called by \mintinline{python}|str(object)| and the built-in functions \mintinline{python}|format()| and \mintinline{python}|print()| to compute the ``informal'' or nicely printable string representation of an object.
+    \item \mintinline{python}|__lt__( self, other )|:
+    \item \mintinline{python}|__le__( self, other )|:
+    \item \mintinline{python}|__eq__( self, other )|:
+    \item \mintinline{python}|__ne__( self, other )|:
+    \item \mintinline{python}|__gt__( self, other )|:
+    \item \mintinline{python}|__ge__( self, other )|:
+  \end{itemize}
+\end{frame}
+
+\begin{frame}
+	\frametitle{Special method names (Cont'd)}
+  These are the so-called ``rich comparison'' methods,
+  and are called for comparison operators in preference to \mintinline{python}|__cmp__()| below.
 \end{frame}
 
 \end{document}
