@@ -31,6 +31,12 @@
 % the following command suppresses all navigation symbols
 \setbeamertemplate{navigation symbols}{}
 
+\newcommand{\letscode}[1]{%
+  \vfill
+  \centering
+  \href{#1}{Let's code}
+}
+
 \AtBeginSection[]
 {%
   \begin{frame}
