@@ -23,6 +23,30 @@ It started by an introduction session(s) in which we introduced and work with th
 - 7th Amirkabir Linux Festival -- 2015
 - [Diginext Software Engineering Bootcamp](https://github.com/orgs/1995parham-teaching/projects/1?pane=info) -- 2023
 
+## Diginext Roadmap
+
+### Week 2
+
+How to create maintainable, scalable and reliable software using Python?
+
+- basic syntax
+- problem solving
+- object oriented programming
+
+### Week 3
+
+How to create maintainable, scalable and reliable software using Python?
+
+- working with some popular libraries
+- async programming
+
+### Week 4
+
+How to create maintainable, scalable and reliable software using Python?
+
+- clean and fluent code with python
+- python best practices and design patterns
+
 ## Special Thanks To
 
 - [Dr.Bakhshi](https://github.com/Bahador-Bakhshi) (Helped in holding classes)
