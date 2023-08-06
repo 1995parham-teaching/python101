@@ -1,0 +1,187 @@
+\documentclass{../py-lecture}
+
+\subtitle{Packages}
+
+\begin{document}
+
+\begin{frame}
+  \titlepage{}
+\end{frame}
+\begin{frame}
+  \frametitle{Outline}
+  \tableofcontents{}
+\end{frame}
+
+\section{Input/Output}
+
+\begin{frame}[fragile]
+	\frametitle{Keyboard Input}
+    \begin{itemize}
+      \item The input() function reads a line from sys.stdin and
+        returns it with the trailing newline stripped.
+    \end{itemize}
+    \begin{minted}[bgcolor=Black]{python}
+name = input("Enter your input: ")
+print("Received input is : ", name)
+    \end{minted}
+\end{frame}
+
+\begin{frame}
+	\frametitle{File IO}
+  \begin{itemize}
+    \item The open Function
+    \item The file Object
+    \item The \mintinline{python}|close()| Method
+    \item The \mintinline{python}|write()| Method
+    \item The \mintinline{python}|read()| Method
+    \item Check
+    \href{https://docs.python.org/3/library/functions.html}{here}
+    for more details and functions.
+  \end{itemize}
+\end{frame}
+
+\begin{frame}[fragile]
+	\frametitle{The open Function}
+  \begin{itemize}
+    \item Before you can read or write a file, \\
+    you have to open it using Python's built-in open() function.
+    \item This function creates a file object, which would be utilized \\
+    to call other support methods associated with it.
+  \end{itemize}
+  \begin{minted}[bgcolor=Black]{python}
+		file_object = open(file_name [, access_mode][, buffering])
+	\end{minted}
+  \begin{minted}[bgcolor=Black]{python}
+		fo = open("foo.txt", "w")
+	\end{minted}
+\end{frame}
+
+\begin{frame}[fragile]
+	\frametitle{The write() Method}
+	\begin{columns}[c]
+		\begin{column}{30cm}
+			\vspace{.1cm}
+			\begin{itemize}
+				\item The write() method writes any string to an open file.
+			\end{itemize}
+			\begin{scriptsize}
+				\begin{minted}[
+				bgcolor=BG,
+				frame=lines,
+				framesep=2mm,
+				baselinestretch=1.2,
+				linenos]
+				{python}
+				fileObject.write(string)
+				\end{minted}
+				\begin{minted}[
+				bgcolor=BG,
+				frame=lines,
+				framesep=2mm,
+				baselinestretch=1.2,
+				linenos]
+				{python}
+				# Open a file
+				fo = open("foo.txt", "wb")
+				fo.write( "Python is a great language.\nYeah its great!!\n")
+				
+				# Close opend file
+				fo.close()
+				\end{minted}
+			\end{scriptsize}
+		\end{column}
+	\end{columns}
+\end{frame}
+
+%------------------------------------------------
+\begin{frame}[fragile]
+	\frametitle{The read() Method}
+	\begin{columns}[c]
+		\begin{column}{30cm}
+			\vspace{.1cm}
+			\begin{itemize}
+				\item The read() method reads a string from an open file.
+			\end{itemize}
+			\begin{scriptsize}
+				\begin{minted}[
+				bgcolor=BG,
+				frame=lines,
+				framesep=2mm,
+				baselinestretch=1.2,
+				linenos]
+				{python}
+				fileObject.read([count])
+				\end{minted}
+				\begin{minted}[
+				bgcolor=BG,
+				frame=lines,
+				framesep=2mm,
+				baselinestretch=1.2,
+				linenos]
+				{python}
+				# Open a file
+				fo = open("foo.txt", "r+")
+				str = fo.read(10);
+				print "Read String is : ", str
+				# Close opend file
+				fo.close()
+				\end{minted}
+			\end{scriptsize}
+		\end{column}
+	\end{columns}
+\end{frame}
+
+%------------------------------------------------
+\begin{frame}[fragile]
+	\frametitle{The readline() Method}
+	\begin{columns}[c]
+		\begin{column}{30cm}
+			\vspace{.1cm}
+			\begin{itemize}
+				\item Read one entire line from the file.
+				\item A trailing newline character is kept in the string.
+				\item If the size argument is present and non-negative, \\
+				it is a maximum byte count (including the trailing newline) \\
+				and an incomplete line may be returned.
+			\end{itemize}
+			\begin{scriptsize}
+				\begin{minted}[
+				bgcolor=BG,
+				frame=lines,
+				framesep=2mm,
+				baselinestretch=1.2,
+				linenos]
+				{python}
+				fileObject.readline([size])
+				\end{minted}
+			\end{scriptsize}
+		\end{column}
+	\end{columns}
+\end{frame}
+
+%------------------------------------------------
+\begin{frame}[fragile]
+	\frametitle{The readlines() Method}
+	\begin{columns}[c]
+		\begin{column}{30cm}
+			\vspace{.1cm}
+			\begin{itemize}
+				\item Read until EOF using readline() and return a \\
+				 list containing the lines thus read.
+			\end{itemize}
+			\begin{scriptsize}
+				\begin{minted}[
+				bgcolor=BG,
+				frame=lines,
+				framesep=2mm,
+				baselinestretch=1.2,
+				linenos]
+				{python}
+				fileObject.readlines([sizehint])
+				\end{minted}
+			\end{scriptsize}
+		\end{column}
+	\end{columns}
+\end{frame}
+
+\end{document}
