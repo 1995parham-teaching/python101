@@ -29,23 +29,23 @@ It started by an introduction session(s) in which we introduced and work with th
 
 How to create maintainable, scalable and reliable software using Python?
 
-- basic syntax
-- problem solving
-- object oriented programming
+- Basic syntax
+- Problem-solving
+- Object oriented programming
 
 ### Week 3
 
 How to create maintainable, scalable and reliable software using Python?
 
-- working with some popular libraries
-- async programming
+- Working with some popular libraries
+- Async programming
 
 ### Week 4
 
 How to create maintainable, scalable and reliable software using Python?
 
-- clean and fluent code with python
-- python best practices and design patterns
+- Clean and fluent code with Python
+- Python best practices and design patterns
 
 ## Special Thanks To
 
@@ -53,3 +53,11 @@ How to create maintainable, scalable and reliable software using Python?
 - [Dr.Payberah](https://github.com/payberah) (Contributed to creating slides.)
 - [S.M.M.Ahmadpanah](https://github.com/smahmadpanah) (Contributed to editing slides.)
 - [E.Jalalpour](https://github.com/eljalalpour) (Contributed to editing slides.)
+
+## Requirements
+
+To build the lectures you will need the following packages:
+
+```sh
+sudo tlmgr install datetime2 fmtcount algorithm2e ifoddpage relsize tracklang
+```
