@@ -65,98 +65,52 @@ print("Received input is : ", name)
 				\item The write() method writes any string to an open file.
 			\end{itemize}
 			\begin{scriptsize}
-				\begin{minted}[
-				bgcolor=BG,
-				frame=lines,
-				framesep=2mm,
-				baselinestretch=1.2,
-				linenos]
-				{python}
-				fileObject.write(string)
+        \begin{minted}[bgcolor=Black]{python}
+fileObject.write(string)
 				\end{minted}
-				\begin{minted}[
-				bgcolor=BG,
-				frame=lines,
-				framesep=2mm,
-				baselinestretch=1.2,
-				linenos]
-				{python}
-				# Open a file
-				fo = open("foo.txt", "wb")
-				fo.write( "Python is a great language.\nYeah its great!!\n")
-				
-				# Close opend file
-				fo.close()
+        \begin{minted}[bgcolor=Black]{python}
+# Open a file
+fo = open("foo.txt", "wb")
+fo.write( "Python is a great language.\nYeah its great!!\n")
+
+# Close opend file
+fo.close()
 				\end{minted}
 			\end{scriptsize}
 		\end{column}
 	\end{columns}
 \end{frame}
 
-%------------------------------------------------
 \begin{frame}[fragile]
 	\frametitle{The read() Method}
-	\begin{columns}[c]
-		\begin{column}{30cm}
-			\vspace{.1cm}
-			\begin{itemize}
-				\item The read() method reads a string from an open file.
-			\end{itemize}
-			\begin{scriptsize}
-				\begin{minted}[
-				bgcolor=BG,
-				frame=lines,
-				framesep=2mm,
-				baselinestretch=1.2,
-				linenos]
-				{python}
-				fileObject.read([count])
-				\end{minted}
-				\begin{minted}[
-				bgcolor=BG,
-				frame=lines,
-				framesep=2mm,
-				baselinestretch=1.2,
-				linenos]
-				{python}
-				# Open a file
-				fo = open("foo.txt", "r+")
-				str = fo.read(10);
-				print "Read String is : ", str
-				# Close opend file
-				fo.close()
-				\end{minted}
-			\end{scriptsize}
-		\end{column}
-	\end{columns}
+  \begin{itemize}
+    \item The read() method reads a string from an open file.
+  \end{itemize}
+  \begin{minted}[bgcolor=Black]{python}
+fileObject.read([count])
+  \end{minted}
+  \begin{minted}[bgcolor=Black]{python}
+# Open a file
+fo = open("foo.txt", "r+")
+str = fo.read(10);
+print "Read String is : ", str
+# Close opend file
+fo.close()
+	\end{minted}
 \end{frame}
 
-%------------------------------------------------
 \begin{frame}[fragile]
 	\frametitle{The readline() Method}
-	\begin{columns}[c]
-		\begin{column}{30cm}
-			\vspace{.1cm}
-			\begin{itemize}
-				\item Read one entire line from the file.
-				\item A trailing newline character is kept in the string.
-				\item If the size argument is present and non-negative, \\
-				it is a maximum byte count (including the trailing newline) \\
-				and an incomplete line may be returned.
-			\end{itemize}
-			\begin{scriptsize}
-				\begin{minted}[
-				bgcolor=BG,
-				frame=lines,
-				framesep=2mm,
-				baselinestretch=1.2,
-				linenos]
-				{python}
-				fileObject.readline([size])
-				\end{minted}
-			\end{scriptsize}
-		\end{column}
-	\end{columns}
+  \begin{itemize}
+    \item Read one entire line from the file.
+    \item A trailing newline character is kept in the string.
+    \item If the size argument is present and non-negative, \\
+    it is a maximum byte count (including the trailing newline) \\
+    and an incomplete line may be returned.
+  \end{itemize}
+  \begin{minted}[bgcolor=Black]{python}
+fileObject.readline([size])
+  \end{minted}
 \end{frame}
 
 %------------------------------------------------
