@@ -258,7 +258,10 @@ def csv_reader(file_name):
 \end{frame}
 
 \begin{frame}
-  \frametitle{}
+  \frametitle{Reading Large Files (Cont'd)}
+  \begin{block}{}
+    This version opens a file, loops through each line, and \textcolor{LimeGreen}{yields} each row, instead of returning it.
+  \end{block}
   \begin{minted}[]{python}
 def csv_reader(file_name):
   for row in open(file_name, "r"):
