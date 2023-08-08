@@ -117,4 +117,105 @@ file_object.readlines([sizehint])
   \end{minted}
 \end{frame}
 
+\section{Iterators \& Generators}
+
+\begin{frame}[fragile]
+	\frametitle{Iterators \& Generators}
+  \begin{itemize}
+    \item There are many types of objects which can be used with a for loop.
+    These are called \textcolor{Orange}{iterable} objects.
+    \item The built-in function \textcolor{Orange}{iter} takes an \textcolor{Orange}{iterable}
+    object and returns an iterator.
+  \end{itemize}
+  \begin{minted}[bgcolor=Black]{python}
+>>> x = iter([1, 2, 3])
+>>> x
+<list_iterator object at 0x7fbe1813caf0>
+>>> next(x)
+1
+>>> next(x)
+2
+>>> next(x)
+3
+  \end{minted}
+\end{frame}
+
+\begin{frame}[fragile]
+	\frametitle{Iterators \& Generators}
+  \begin{itemize}
+    \item Iterators are implemented as classes.
+  \end{itemize}
+  \begin{minted}[fontsize=\scriptsize,bgcolor=Black]{python}
+class yrange:
+  def __init__(self, n):
+    self.i = 0
+    self.n = n
+
+  def __iter__(self):
+    return self
+
+  def __next__(self):
+      if self.i < self.n:
+          i = self.i
+          self.i += 1
+          return i
+      else:
+          raise StopIteration()
+    \end{minted}
+\end{frame}
+
+\begin{frame}[fragile]
+	\frametitle{Iterators \& Generators}
+  \begin{itemize}
+    \item In the above case, both the iterable and iterator are the same object. Notice that the \mintinline{python}|__iter__| method returned \mintinline{python}|self|.
+  \end{itemize}
+  \begin{minted}[bgcolor=Black]{python}
+class zrange:
+    def __init__(self, n):
+        self.n = n
+
+    def __iter__(self):
+        return zrange_iter(self.n)
+  \end{minted}
+\end{frame}
+
+%------------------------------------------------
+\begin{frame}[fragile]
+	\frametitle{Iterators \& Generators}
+  \begin{minted}[fontsize=\scriptsize,bgcolor=Black]{python}
+class zrange_iter:
+    def __init__(self, n):
+        self.i = 0
+        self.n = n
+
+    def __iter__(self):
+        # Iterators are iterables too.
+        # Adding this functions to make them so.
+        return self
+
+    def __next__(self):
+        if self.i < self.n:
+            i = self.i
+            self.i += 1
+            return i
+        else:
+            raise StopIteration()
+	\end{minted}
+\end{frame}
+
+%------------------------------------------------
+\begin{frame}
+	\frametitle{Iterators \& Generators}
+  \begin{block}{}
+		If both iteratable and iterator are the same object, it is consumed in a single iteration.
+	\end{block}
+  \begin{minted}[fontsize=\scriptsize,bgcolor=Black]{python}
+yr = yrange(1)
+yr.next()
+yr.next() # StopIteration
+yr.next() # StopIteration
+	\end{minted}
+\end{frame}
+
+
 \end{document}
