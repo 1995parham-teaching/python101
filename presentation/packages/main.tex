@@ -222,9 +222,13 @@ yr.next() # StopIteration
   \end{itemize}
 \end{frame}
 
-\begin{frame}
+\begin{frame}[fragile]
   \frametitle{Reading Large Files}
-  \begin{minted}[fontsize=\scriptsize,bgcolor=Black]{pyhton}
+  \begin{block}{}
+  A common use case of generators is to work with data streams or large files, like CSV files.
+  These text files separate data into columns by using commas. This format is a common way to share data.
+  \end{block}
+  \begin{minted}[bgcolor=Black]{python}
 csv_gen = csv_reader("some_csv.txt")
 row_count = 0
 
@@ -235,9 +239,13 @@ print(f"Row count is {row_count}")
   \end{minted}
 \end{frame}
 
-\begin{frame}
+\begin{frame}[fragile]
   \frametitle{Reading Large Files (Cont'd)}
-  \begin{minted}[fontsize=\scriptsize,bgcolor=Black]{pyhton}
+  \begin{block}{}
+  This function opens a given file and uses \mintinline{python}|file.read()| along with \mintinline{python}|.split()|
+  to add each line as a separate element to a list.
+  \end{block}
+  \begin{minted}[bgcolor=Black]{python}
 def csv_reader(file_name):
   file = open(file_name)
   result = file.read().split("\n")
