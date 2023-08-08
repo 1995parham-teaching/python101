@@ -120,7 +120,7 @@ file_object.readlines([sizehint])
 \section{Iterators \& Generators}
 
 \begin{frame}[fragile]
-	\frametitle{Iterators \& Generators}
+	\frametitle{Iterators}
   \begin{itemize}
     \item There are many types of objects which can be used with a for loop.
     These are called \textcolor{Orange}{iterable} objects.
@@ -141,7 +141,7 @@ file_object.readlines([sizehint])
 \end{frame}
 
 \begin{frame}[fragile]
-	\frametitle{Iterators \& Generators}
+	\frametitle{Iterators}
   \begin{itemize}
     \item Iterators are implemented as classes.
   \end{itemize}
@@ -165,7 +165,7 @@ class yrange:
 \end{frame}
 
 \begin{frame}[fragile]
-	\frametitle{Iterators \& Generators}
+	\frametitle{Iterators}
   \begin{itemize}
     \item In the above case, both the iterable and iterator are the same object. Notice that the \mintinline{python}|__iter__| method returned \mintinline{python}|self|.
   \end{itemize}
@@ -181,7 +181,7 @@ class zrange:
 
 %------------------------------------------------
 \begin{frame}[fragile]
-	\frametitle{Iterators \& Generators}
+	\frametitle{Iterators}
   \begin{minted}[fontsize=\scriptsize,bgcolor=Black]{python}
 class zrange_iter:
     def __init__(self, n):
@@ -205,7 +205,7 @@ class zrange_iter:
 
 %------------------------------------------------
 \begin{frame}[fragile]
-	\frametitle{Iterators \& Generators}
+	\frametitle{Iterators}
   \begin{block}{}
 		If both iteratable and iterator are the same object, it is consumed in a single iteration.
 	\end{block}
@@ -217,5 +217,11 @@ yr.next() # StopIteration
 	\end{minted}
 \end{frame}
 
+\begin{frame}
+  \frametitle{Generators}
+  \begin{itemize}
+    \item Introduced with PEP 255, \textcolor{Orange}{generator functions} are a special kind of function that return a \textcolor{LimeGreen}{lazy iterator}.
+  \end{itemize}
+\end{frame}
 
 \end{document}
