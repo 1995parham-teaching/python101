@@ -179,7 +179,6 @@ class zrange:
   \end{minted}
 \end{frame}
 
-%------------------------------------------------
 \begin{frame}[fragile]
 	\frametitle{Iterators}
   \begin{minted}[fontsize=\scriptsize,bgcolor=Black]{python}
@@ -203,7 +202,6 @@ class zrange_iter:
 	\end{minted}
 \end{frame}
 
-%------------------------------------------------
 \begin{frame}[fragile]
 	\frametitle{Iterators}
   \begin{block}{}
@@ -222,6 +220,29 @@ yr.next() # StopIteration
   \begin{itemize}
     \item Introduced with PEP 255, \textcolor{Orange}{generator functions} are a special kind of function that return a \textcolor{LimeGreen}{lazy iterator}.
   \end{itemize}
+\end{frame}
+
+\begin{frame}
+  \frametitle{Reading Large Files}
+  \begin{minted}[fontsize=\scriptsize,bgcolor=Black]{pyhton}
+csv_gen = csv_reader("some_csv.txt")
+row_count = 0
+
+for row in csv_gen:
+  row_count += 1
+
+print(f"Row count is {row_count}")
+  \end{minted}
+\end{frame}
+
+\begin{frame}
+  \frametitle{Reading Large Files (Cont'd)}
+  \begin{minted}[fontsize=\scriptsize,bgcolor=Black]{pyhton}
+def csv_reader(file_name):
+  file = open(file_name)
+  result = file.read().split("\n")
+  return result
+  \end{minted}
 \end{frame}
 
 \end{document}
