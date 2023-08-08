@@ -269,4 +269,14 @@ def csv_reader(file_name):
   \end{minted}
 \end{frame}
 
+\begin{frame}[fragile]
+  \frametitle{Reading Large Files (Cont'd)}
+  \begin{block}{Generator Comprehension}
+  You can also define a generator expression (also called a generator comprehension), which has a very similar syntax to list comprehensions. In this way, you can use the generator without calling a function
+  \end{block}
+  \begin{minted}[]{python}
+csv_gen = (row for row in open(file_name))
+  \end{minted}
+\end{frame}
+
 \end{document}
