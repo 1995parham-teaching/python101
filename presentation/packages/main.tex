@@ -225,8 +225,8 @@ yr.next() # StopIteration
 \begin{frame}[fragile]
   \frametitle{Reading Large Files}
   \begin{block}{}
-  A common use case of generators is to work with data streams or large files, like CSV files.
-  These text files separate data into columns by using commas. This format is a common way to share data.
+    A common use case of generators is to work with data streams or large files, like CSV files.
+    These text files separate data into columns by using commas. This format is a common way to share data.
   \end{block}
   \begin{minted}[bgcolor=Black]{python}
 csv_gen = csv_reader("some_csv.txt")
@@ -250,6 +250,19 @@ def csv_reader(file_name):
   file = open(file_name)
   result = file.read().split("\n")
   return result
+  \end{minted}
+  \begin{block}{Memory Error}
+    In this case, \mintinline{python}|open()| returns a generator object that you can lazily iterate through line by line.
+    However, \mintinline{python}|file.read().split()| loads everything into memory at once, causing the \mintintline{python}|MemoryError|.
+  \end{block}
+\end{frame}
+
+\begin{frame}
+  \frametitle{}
+  \begin{minted}[]{python}
+def csv_reader(file_name):
+  for row in open(file_name, "r"):
+    yield row
   \end{minted}
 \end{frame}
 
