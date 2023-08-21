@@ -253,16 +253,16 @@ def csv_reader(file_name):
   \end{minted}
   \begin{block}{Memory Error}
     In this case, \mintinline{python}|open()| returns a generator object that you can lazily iterate through line by line.
-    However, \mintinline{python}|file.read().split()| loads everything into memory at once, causing the \mintintline{python}|MemoryError|.
+    However, \mintinline{python}|file.read().split()| loads everything into memory at once, causing the \mintinline{python}|MemoryError|.
   \end{block}
 \end{frame}
 
-\begin{frame}
+\begin{frame}[fragile]
   \frametitle{Reading Large Files (Cont'd)}
   \begin{block}{}
     This version opens a file, loops through each line, and \textcolor{LimeGreen}{yields} each row, instead of returning it.
   \end{block}
-  \begin{minted}[]{python}
+  \begin{minted}[bgcolor=Black]{python}
 def csv_reader(file_name):
   for row in open(file_name, "r"):
     yield row
@@ -274,8 +274,22 @@ def csv_reader(file_name):
   \begin{block}{Generator Comprehension}
   You can also define a generator expression (also called a generator comprehension), which has a very similar syntax to list comprehensions. In this way, you can use the generator without calling a function
   \end{block}
-  \begin{minted}[]{python}
+  \begin{minted}[bgcolor=Black]{python}
 csv_gen = (row for row in open(file_name))
+  \end{minted}
+\end{frame}
+
+\begin{frame}[fragile]
+  \frametitle{Generating an Infinite Sequence}
+  \begin{block}{}
+    Generating an infinite sequence, will require the use of a generator, since your computer memory is finite.
+  \end{block}
+  \begin{minted}[bgcolor=Black]{python}
+def infinite_sequence():
+    num = 0
+    while True:
+        yield num
+        num += 1
   \end{minted}
 \end{frame}
 
