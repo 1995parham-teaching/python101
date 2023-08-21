@@ -293,4 +293,45 @@ def infinite_sequence():
   \end{minted}
 \end{frame}
 
+\section{Modules}
+
+\begin{frame}
+	\frametitle{Modules}
+  \begin{itemize}
+    \item A module allows you to logically organize your Python code.
+    \item Grouping related code into a module makes the code easier to understand and use
+  \end{itemize}
+\end{frame}
+
+\begin{frame}[fragile]
+	\frametitle{Modules (Cont'd)}
+	\begin{minted}[bgcolor=Black]{python}
+def print_func(par: str):
+    print(f"Hello : {par}")
+    return
+  \end{minted}
+  \begin{minted}[bgcolor=Black]{python}
+# Import module support
+import support
+
+# Now you can call defined function that module as follows
+support.print_func("Zara")
+	\end{minted}
+\end{frame}
+
+\begin{frame}
+	\frametitle{Modules}
+  \begin{itemize}
+    \item Python's from statement lets you import specific attributes from a
+      module into the current namespace.
+    \item Locating Modules
+    \begin{itemize}
+      \item The current directory.
+      \item Python then searches each directory in the shell variable \textit{PYTHONPATH}.
+      \item If all else fails, Python checks the default path.
+        On UNIX, this default path is normally \textit{/usr/local/lib/python/}.
+    \end{itemize}
+  \end{itemize}
+\end{frame}
+
 \end{document}
