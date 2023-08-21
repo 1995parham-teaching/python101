@@ -1,6 +1,6 @@
 class Employee:
     """
-    common base class for all employees
+    common base class for all employees.
     """
 
     employee_count = 0
