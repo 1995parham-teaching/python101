@@ -181,7 +181,7 @@ def hello():
     return "Hello"
   \end{minted}
   \begin{minted}[bgcolor=Black]{python}
-def printme( statement ):
+def printme(statement: str):
     "This prints a passed string into this function"
     print(statement)
     return
@@ -362,14 +362,38 @@ foo = lambda x: x * x
 
 \begin{frame}[fragile]
 	\frametitle{Inheritance (Cont'd)}
-  \begin{minted}[bgcolor=Black]
-  {python}
+  \begin{minted}[bgcolor=Black]{python}
 class SubClassName (ParentClass1[, ParentClass2, ...]):
     """
     optional class documentation string
     """
     # class_suite
   \end{minted}
+\end{frame}
+
+\begin{frame}[fragile]
+	\frametitle{Employees Inheritance}
+  \inputminted[bgcolor=Black,fontsize=\scriptsize,lastline=21]{python}{./src/employee_2.py}
+\end{frame}
+
+\begin{frame}[fragile]
+	\frametitle{Employees Inheritance (Cont'd)}
+  \inputminted[bgcolor=Black,fontsize=\scriptsize,firstline=23,lastline=29]{python}{./src/employee_2.py}
+\end{frame}
+
+\begin{frame}[fragile]
+	\frametitle{Employees Inheritance (Cont'd)}
+  \inputminted[bgcolor=Black,fontsize=\scriptsize,firstline=31,lastline=38]{python}{./src/employee_2.py}
+\end{frame}
+
+\begin{frame}[fragile]
+	\frametitle{Employees Inheritance (Cont'd)}
+  \inputminted[bgcolor=Black,fontsize=\scriptsize,firstline=31,lastline=38]{python}{./src/employee_2.py}
+\end{frame}
+
+\begin{frame}[fragile]
+	\frametitle{Employees Inheritance (Cont'd)}
+  \inputminted[bgcolor=Black,fontsize=\scriptsize,firstline=40]{python}{./src/employee_2.py}
 \end{frame}
 
 \begin{frame}
