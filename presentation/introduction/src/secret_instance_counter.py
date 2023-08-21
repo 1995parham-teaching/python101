@@ -4,14 +4,12 @@ class SecretCounter:
 
     def inc(self):
         self.__secret_count += 1
-        print(f"secret counter increased to: {self.__secret_count}")
 
 
 if __name__ == "__main__":
     counter1 = SecretCounter()
     counter1.inc()
     counter1.inc()
-
     counter2 = SecretCounter()
 
     # AttributeError: 'SecretCounter' object has no attribute '__secret_count'
