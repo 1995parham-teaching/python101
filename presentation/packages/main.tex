@@ -117,6 +117,24 @@ file_object.readlines([sizehint])
   \end{minted}
 \end{frame}
 
+\begin{frame}
+  \frametitle{File Handle}
+  \begin{block}{}
+    A file handle or pointer denotes the position from which the file contents will be read or written. File handle is also called as file pointer or cursor.
+  \end{block}
+\end{frame}
+
+\begin{frame}[fragile]
+  \frametitle{\mintinline{python}|seek()|}
+  \begin{block}{}
+    To change the file handle’s position use seek() method. As we discussed, the seek() method sets the file’s current position,
+    and then we can read or write to the file from that position.
+  \end{block}
+  \begin{minted}[bgcolor=Black]{python}
+f.seek(offset, whence)
+  \end{minted}
+\end{frame}
+
 \section{Iterators \& Generators}
 
 \begin{frame}[fragile]
