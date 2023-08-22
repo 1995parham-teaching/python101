@@ -133,6 +133,11 @@ file_object.readlines([sizehint])
   \begin{minted}[bgcolor=Black]{python}
 f.seek(offset, whence)
   \end{minted}
+  \begin{itemize}
+    \item A whence value of 0 (\mintinline{python}|io.SEEK_SET|) means from the beginning of the file.
+    \item A whence value of 1 (\mintinline{python}|io.SEEK_CUR|) uses the current file position
+    \item A whence value of 2 (\mintinline{python}|io.SEEK_END|) uses the end of the file as the reference point. 
+  \end{itemize}
 \end{frame}
 
 \section{Iterators \& Generators}
