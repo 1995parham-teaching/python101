@@ -1,20 +1,24 @@
 import socket
 
-# Create a socket object
+# create a socket object
 s = socket.socket()
-# Get local machine name
+# get local machine name which means 127.0.0.1
+# you can also use:
+# host = '127.0.0.1'
+# or
+# host = '0.0.0.0'
 host = socket.gethostname()
-# Reserve a port for your service.
+# reserve a port for your service.
 port = 1378
-# Bind to the port
+# bind to the port
 s.bind((host, port))
 
-# Now wait for client connection.
+# now wait for client connection.
 s.listen(5)
 while True:
-    # Establish connection with client.
+    # establish connection with client by accepting it.
     c, addr = s.accept()
     print(f"Got connection from {addr}")
     c.send("Thank you for connecting".encode("utf-8"))
-    # Close the connection
+    # close the connection
     c.close()
