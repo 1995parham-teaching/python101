@@ -397,10 +397,10 @@ s = socket.socket (socket_family, socket_type, protocol=0)
 
 \begin{frame}[fragile]
 	\frametitle{Multithreading}
-  \begin{minted}[bgcolor=Black]{python}
-class myThread (threading.Thread):
+  \begin{minted}[bgcolor=Black,fontsize=\scriptsize]{python}
+class MyThread (threading.Thread):
   def __init__(self, thread_id, name, counter):
-    threading.Thread.__init__(self)
+    super().__init__(self)
     self.thread_id = thread_id
     self.name = name
     self.counter = counter
@@ -420,16 +420,60 @@ def print_time(thread_name, delay, counter):
 \begin{frame}[fragile]
 	\frametitle{Multithreading}
   \begin{minted}[bgcolor=Black]{python}
-# Create new threads
-thread1 = myThread(1, "Thread-1", 1)
-thread2 = myThread(2, "Thread-2", 2)
+# create new threads
+thread1 = MyThread(1, "Thread-1", 1)
+thread2 = MyThread(2, "Thread-2", 2)
 
-# Start new Threads
+# start new Threads
 thread1.start()
 thread2.start()
 
 print("Exiting Main Thread")
   \end{minted}
+\end{frame}
+
+\begin{frame}
+  \frametitle{Global Interpreter Lock}
+  \begin{block}{}
+    In CPython, due to the Global Interpreter Lock, only one thread can execute Python code at once (even though certain performance-oriented libraries might overcome this limitation).
+    If you want your application to make better use of the computational resources of multi-core machines,
+    you are advised to use multiprocessing or concurrent.futures.ProcessPoolExecutor. However, threading is still an appropriate model
+    if you want to run multiple \textcolor{Orange}{I/O-bound} tasks simultaneously.
+  \end{block}
+\end{frame}
+
+\section{Python Distributions}
+
+\begin{frame}
+  \begin{block}{}
+    You need to keep Python-the-language separate from whatever runs the Python code.
+  \end{block}
+\end{frame}
+
+\begin{frame}
+  \frametitle{CPython}
+  \begin{block}{}
+    CPython is the original Python implementation.
+    It is the implementation you download from Python.org.
+    People call it CPython to distinguish it from other, later, Python implementations, and to distinguish the implementation of the language engine from the Python programming language itself.
+  \end{block}
+\end{frame}
+
+\begin{frame}
+  \frametitle{Jython, etc.}
+  \begin{block}{}
+    Jython, IronPython and PyPy are the current "other" implementations of the Python programming language;
+    these are implemented in Java, C\# and RPython (a subset of Python), respectively.
+  \end{block}
+  \begin{block}{Jython}
+    Jython compiles your Python code to Java bytecode, so your Python code can run on the JVM.
+  \end{block}
+  \begin{block}{IronPython}
+    IronPython lets you run Python on the Microsoft CLR.
+  \end{block}
+  \begin{block}{PyPy}
+    PyPy, being implemented in (a subset of) Python, lets you run Python code faster than CPython.
+  \end{block}
 \end{frame}
 
 \end{document}
