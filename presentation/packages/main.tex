@@ -397,39 +397,12 @@ s = socket.socket (socket_family, socket_type, protocol=0)
 
 \begin{frame}[fragile]
 	\frametitle{Multithreading}
-  \begin{minted}[bgcolor=Black,fontsize=\scriptsize]{python}
-class MyThread (threading.Thread):
-  def __init__(self, thread_id, name, counter):
-    super().__init__(self)
-    self.thread_id = thread_id
-    self.name = name
-    self.counter = counter
-  def run(self):
-    print(f"Starting {self.name}")
-    print_time(self.name, self.counter, 5)
-    print(f"Exiting {self.name}")
-
-def print_time(thread_name, delay, counter):
-  while counter:
-    time.sleep(delay)
-    print(f"{thread_name} {time.ctime(time.time())}")
-    counter -= 1
-  \end{minted}
+  \inputminted[bgcolor=Black,fontsize=\scriptsize,lastline=22]{python}{./src/thread.py}
 \end{frame}
 
 \begin{frame}[fragile]
 	\frametitle{Multithreading}
-  \begin{minted}[bgcolor=Black]{python}
-# create new threads
-thread1 = MyThread(1, "Thread-1", 1)
-thread2 = MyThread(2, "Thread-2", 2)
-
-# start new Threads
-thread1.start()
-thread2.start()
-
-print("Exiting Main Thread")
-  \end{minted}
+  \inputminted[bgcolor=Black,fontsize=\scriptsize,firstline=24]{python}{./src/thread.py}
 \end{frame}
 
 \begin{frame}
