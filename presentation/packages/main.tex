@@ -389,7 +389,7 @@ s = socket.socket (socket_family, socket_type, protocol=0)
 \end{frame}
 
 \begin{frame}[fragile]
-	\frametitle{Socket Programming}
+	\frametitle{Socket Programming Cont'd}
   \inputminted[bgcolor=Black,fontsize=\scriptsize]{python}{./src/client.py}
 \end{frame}
 
@@ -401,7 +401,7 @@ s = socket.socket (socket_family, socket_type, protocol=0)
 \end{frame}
 
 \begin{frame}[fragile]
-	\frametitle{Multithreading}
+	\frametitle{Multithreading Cont'd}
   \inputminted[bgcolor=Black,fontsize=\scriptsize,firstline=24]{python}{./src/thread.py}
 \end{frame}
 
@@ -463,6 +463,16 @@ s = socket.socket (socket_family, socket_type, protocol=0)
   \begin{block}{}
     Prototype-based programming uses the process \textcolor{Orange}{generalized objects}, which can then be \textcolor{RubineRed}{cloned} and \textcolor{LimeGreen}{extended}.
   \end{block}
+\end{frame}
+
+\begin{frame}[fragile]
+  \frametitle{\mintinline{python}|__dict__|}
+  \inputminted[bgcolor=Black,fontsize=\scriptsize,lastline=20]{python}{./src/borg.py}
+\end{frame}
+
+\begin{frame}[fragile]
+  \frametitle{\mintinline{python}|__dict__| Cont'd}
+  \inputminted[bgcolor=Black,fontsize=\scriptsize,firstline=22]{python}{./src/borg.py}
 \end{frame}
 
 \end{document}
