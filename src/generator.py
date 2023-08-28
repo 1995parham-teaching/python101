@@ -1,44 +1,13 @@
-# In The Name Of God
-# ========================================
-# [] File Name : generator
-#
-# [] Creation Date : 09-05-2015
-#
-# [] Created By : Parham Alvani (parham.alvani@gmail.com)
-# =======================================
-__author__ = 'Parham Alvani'
-
-gen = (value for value in range(10) if value > 5)
-lst = [value for value in range(10) if value % 2 == 0]
-print(gen)
-print(lst)
-print(min(lst))
-print(min(lst))
-print(min(gen))
-# we will got error on this :-)
-# print(min(gen))
-
-
 def fibonacci(count):
-    # These seed values generate 0 and 1 when fed into the loop
+    # these seed values generate 0 and 1 when fed into the loop
     a, b = -1, 1
     while count > 0:
-        # Yield the value for this iteration
+        # yield the value for this iteration
         c = a + b
         yield c
-        # Update values for next iteration
+        # update values for next iteration
         a, b = b, c
         count -= 1
-
-
-print("Fibonacci sequence: ")
-for x in fibonacci(10):
-    print(x)
-
-print("======================")
-
-fibonacci_generator = fibonacci(10)
-print(next(fibonacci_generator))
 
 
 def yielder():
@@ -51,9 +20,30 @@ def yielder():
     print("-3-")
 
 
-print("Yielder sequence: ")
-for x in yielder():
-    print(x)
-    print("*******")
+if __name__ == "__main__":
+    # generator
+    gen = (value for value in range(10) if value > 5)
+    # list
+    lst = [value for value in range(10) if value % 2 == 0]
+    print(gen)
+    print(lst)
+    print(min(lst))
+    print(min(lst))
+    print(min(gen))
+    # we will get an error on this because you can iterate a generator only once
+    # print(min(gen))
 
-print("===================")
+    print(f"\n{' fibonacci sequence: ':=^50s}\n")
+    for x in fibonacci(10):
+        print(x)
+
+    fibonacci_generator = fibonacci(10)
+    print(next(fibonacci_generator))
+
+    print(f"\n{' yielder sequence: ':=^50s}\n")
+
+    for x in yielder():
+        print(x)
+        print(f"{'':*<10s}")
+
+    print(f"{'':=<50s}")
