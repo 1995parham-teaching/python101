@@ -10,6 +10,9 @@ __author__ = 'Parham Alvani'
 
 
 class Hello:
+    '''
+    Demonstrate protocol methods in python.
+    '''
     def __init__(self):
         print("Hello created")
 
@@ -26,8 +29,9 @@ class Hello:
         return other
 
 
-h = Hello()
-print(str(h))
-print(int(h))
-print(h + 10)
-print(10 + h)
+if __name__ == "__main__":
+    h = Hello()
+    print(str(h))
+    print(int(h))
+    print(h + 10)
+    print(10 + h)
