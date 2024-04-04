@@ -2,6 +2,7 @@
 name: latex
 on:
   push:
+    tags: "*-*-*"
     paths:
       - 'presentation/**'
 jobs:
