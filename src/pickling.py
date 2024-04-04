@@ -12,6 +12,9 @@ import pickle
 
 
 class IntoBinary:
+    '''
+    Sample class for pickling and un-pickling it.
+    '''
     def __init__(self, number):
         self.number = number
 
@@ -19,9 +22,10 @@ class IntoBinary:
         return "My number is " + str(self.number)
 
 
-my_object = IntoBinary(10)
-print(my_object)
-pickled = pickle.dumps(my_object)
-print(pickled)
-my_object = pickle.loads(pickled)
-print(my_object)
+if __name__ == '__main__':
+    my_object = IntoBinary(10)
+    print(my_object)
+    pickled = pickle.dumps(my_object)
+    print(pickled)
+    my_object = pickle.loads(pickled)
+    print(my_object)
