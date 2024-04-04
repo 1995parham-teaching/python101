@@ -3,7 +3,8 @@
 <p align="center">
   <img alt="banner" src="./.github/assets/banner.png" height="200px" />
   <br />
-  <img alt="GitHub Actions Workflow Status" src="https://img.shields.io/github/actions/workflow/status/1995parham-teaching/python101/lint.yaml?style=for-the-badge&logo=github">
+  <img alt="GitHub Actions Workflow Status" src="https://img.shields.io/github/actions/workflow/status/1995parham-teaching/python101/lint.yaml?style=for-the-badge&logo=github&label=lint">
+  <img alt="GitHub Actions Workflow Status" src="https://img.shields.io/github/actions/workflow/status/1995parham-teaching/python101/latex.yaml?style=for-the-badge&logo=github&label=latex">
 </p>
 
 ## Introduction
