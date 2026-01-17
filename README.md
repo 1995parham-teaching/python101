@@ -127,7 +127,7 @@ cd presentation/packages && tectonic -X build
 ## Presented At
 
 - 7th Amirkabir Linux Festival -- 2015
-- [Diginext Software Engineering Bootcamp](https://github.com/orgs/1995parham-teaching/projects/1?pane=info) -- 2023
+- [Diginext Software Engineering Bootcamp](https://diginext.ir/academy/software-engineering-bootcamp) -- 2023
 
 ## Contributing
 
