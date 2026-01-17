@@ -1,0 +1,156 @@
+---
+name: slides
+
+on:
+  push:
+    branches:
+      - main
+    paths:
+      - 'slides/**'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+concurrency:
+  group: "pages"
+  cancel-in-progress: false
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+
+      - name: Install Marp CLI
+        run: npm install -g @marp-team/marp-cli
+
+      - name: Build HTML slides
+        run: |
+          mkdir -p build
+          for file in slides/*.md; do
+            filename=$(basename "$file" .md)
+            marp "$file" --html --output "build/${filename}.html"
+          done
+
+      - name: Create index page
+        run: |
+          cat > build/index.html << 'EOF'
+          <!DOCTYPE html>
+          <html lang="en">
+          <head>
+            <meta charset="UTF-8">
+            <meta name="viewport" content="width=device-width, initial-scale=1.0">
+            <title>Python 101 - Slides</title>
+            <style>
+              body {
+                font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, sans-serif;
+                max-width: 800px;
+                margin: 0 auto;
+                padding: 2rem;
+                background: #f5f5f5;
+              }
+              h1 {
+                color: #3776ab;
+                border-bottom: 3px solid #ffd43b;
+                padding-bottom: 0.5rem;
+              }
+              .slides-list {
+                list-style: none;
+                padding: 0;
+              }
+              .slides-list li {
+                margin: 1rem 0;
+              }
+              .slides-list a {
+                display: block;
+                padding: 1rem 1.5rem;
+                background: white;
+                border-radius: 8px;
+                text-decoration: none;
+                color: #333;
+                box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+                transition: transform 0.2s, box-shadow 0.2s;
+              }
+              .slides-list a:hover {
+                transform: translateY(-2px);
+                box-shadow: 0 4px 8px rgba(0,0,0,0.15);
+              }
+              .slides-list .week {
+                font-size: 0.85rem;
+                color: #666;
+              }
+              footer {
+                margin-top: 2rem;
+                text-align: center;
+                color: #666;
+              }
+              footer a {
+                color: #3776ab;
+              }
+            </style>
+          </head>
+          <body>
+            <h1>🐍 Python 101 Slides</h1>
+            <p>Interactive slides for the Python 101 workshop.</p>
+            <ul class="slides-list">
+              <li>
+                <a href="01-introduction.html">
+                  <strong>01 - Introduction to Python</strong>
+                  <span class="week">Week 1: Basics, Types, Flow Control, Functions, Classes</span>
+                </a>
+              </li>
+              <li>
+                <a href="02-io-and-modules.html">
+                  <strong>02 - I/O, Iterators & Modules</strong>
+                  <span class="week">Week 2: File I/O, Generators, Packages, Sockets</span>
+                </a>
+              </li>
+              <li>
+                <a href="03-async-and-libraries.html">
+                  <strong>03 - Async & Popular Libraries</strong>
+                  <span class="week">Week 3: asyncio, requests, pathlib, dataclasses</span>
+                </a>
+              </li>
+              <li>
+                <a href="04-testing-and-best-practices.html">
+                  <strong>04 - Testing & Best Practices</strong>
+                  <span class="week">Week 4: pytest, type hints, code quality, design patterns</span>
+                </a>
+              </li>
+            </ul>
+            <footer>
+              <p>
+                <a href="https://github.com/1995parham-teaching/python101">View on GitHub</a> |
+                Built with <a href="https://marp.app">Marp</a>
+              </p>
+            </footer>
+          </body>
+          </html>
+          EOF
+
+      - name: Setup Pages
+        uses: actions/configure-pages@v4
+
+      - name: Upload artifact
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: 'build'
+
+  deploy:
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    runs-on: ubuntu-latest
+    needs: build
+    steps:
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4
