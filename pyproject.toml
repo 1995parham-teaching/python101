@@ -20,15 +20,12 @@ classifiers = [
 
 dependencies = []
 
-[project.optional-dependencies]
+[dependency-groups]
 # Dependencies for running all examples
 examples = ["requests>=2.28", "aiohttp>=3.8"]
 
 # Development dependencies
 dev = ["pytest>=7.0", "pytest-asyncio>=0.21", "mypy>=1.0", "ruff>=0.1"]
-
-# All dependencies
-all = ["python101[examples]", "python101[dev]"]
 
 [project.urls]
 Homepage = "https://github.com/1995parham-teaching/python101"

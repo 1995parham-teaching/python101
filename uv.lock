@@ -398,14 +398,9 @@ name = "python101"
 version = "2.0.0"
 source = { virtual = "." }
 
-[package.optional-dependencies]
+[package.dev-dependencies]
 all = [
-    { name = "aiohttp" },
-    { name = "mypy" },
-    { name = "pytest" },
-    { name = "pytest-asyncio" },
-    { name = "requests" },
-    { name = "ruff" },
+    { name = "python101" },
 ]
 dev = [
     { name = "mypy" },
@@ -419,17 +414,22 @@ examples = [
 ]
 
 [package.metadata]
-requires-dist = [
-    { name = "aiohttp", marker = "extra == 'examples'", specifier = ">=3.8" },
-    { name = "mypy", marker = "extra == 'dev'", specifier = ">=1.0" },
-    { name = "pytest", marker = "extra == 'dev'", specifier = ">=7.0" },
-    { name = "pytest-asyncio", marker = "extra == 'dev'", specifier = ">=0.21" },
-    { name = "python101", extras = ["dev"], marker = "extra == 'all'" },
-    { name = "python101", extras = ["examples"], marker = "extra == 'all'" },
-    { name = "requests", marker = "extra == 'examples'", specifier = ">=2.28" },
-    { name = "ruff", marker = "extra == 'dev'", specifier = ">=0.1" },
+
+[package.metadata.requires-dev]
+all = [
+    { name = "python101", extras = ["dev"] },
+    { name = "python101", extras = ["examples"] },
 ]
-provides-extras = ["examples", "dev", "all"]
+dev = [
+    { name = "mypy", specifier = ">=1.0" },
+    { name = "pytest", specifier = ">=7.0" },
+    { name = "pytest-asyncio", specifier = ">=0.21" },
+    { name = "ruff", specifier = ">=0.1" },
+]
+examples = [
+    { name = "aiohttp", specifier = ">=3.8" },
+    { name = "requests", specifier = ">=2.28" },
+]
 
 [[package]]
 name = "requests"
