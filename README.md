@@ -116,6 +116,12 @@ done
 
 - 7th Amirkabir Linux Festival -- 2015
 - [Diginext Software Engineering Bootcamp](https://diginext.ir/academy/software-engineering-bootcamp) -- 2023
+  - Monday, August 14, 2023 -- 18:00 - 20:30
+  - Saturday, August 19, 2023 -- 18:00 - 20:30
+  - Monday, August 21, 2023 -- 18:00 - 20:30
+  - Saturday, August 26, 2023 -- 18:00 - 20:30
+  - Monday, August 28, 2023 -- 18:00 - 20:30
+  - Saturday, September 2, 2023 -- 18:00 - 20:30
 
 ## Contributing
 
