@@ -31,7 +31,6 @@ python101/
 │   ├── 10-testing/         # pytest, mocking
 │   └── 11-typing/          # Type hints, generics, dataclasses
 ├── slides/                 # Marp markdown slides
-├── presentation/           # LaTeX presentations (legacy)
 └── .github/workflows/      # CI/CD workflows
 ```
 
@@ -111,17 +110,6 @@ npm install -g @marp-team/marp-cli
 for file in slides/*.md; do
   marp "$file" --html
 done
-```
-
-### LaTeX Presentations (PDF)
-
-```bash
-# Install Tectonic
-# See: https://tectonic-typesetting.github.io/
-
-# Build presentations
-cd presentation/introduction && tectonic -X build
-cd presentation/packages && tectonic -X build
 ```
 
 ## Presented At
