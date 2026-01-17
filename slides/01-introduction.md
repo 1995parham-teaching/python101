@@ -9,22 +9,77 @@ style: |
   :root {
     --color-background: #1e1e2e;
     --color-foreground: #cdd6f4;
-    --color-highlight: #ff6b35;
+    --color-highlight: #89b4fa;
   }
   section {
-    background-color: #1e1e2e;
+    background: linear-gradient(135deg, #1e1e2e 0%, #181825 100%);
+    font-size: 28px;
   }
-  h1, h2, h3, h4, h5, h6 {
-    color: #ff6b35;
+  h1 {
+    color: #89b4fa;
+    border-bottom: 2px solid #cba6f7;
+    padding-bottom: 10px;
+  }
+  h2, h3 {
+    color: #94e2d5;
+  }
+  h4, h5, h6 {
+    color: #a6e3a1;
   }
   a {
-    color: #fab387;
+    color: #f5c2e7;
+    text-decoration: underline;
+    text-decoration-color: #cba6f7;
+  }
+  a:hover {
+    color: #cba6f7;
   }
   code {
     background-color: #313244;
+    color: #f9e2af;
+    border-radius: 4px;
+    padding: 2px 6px;
+  }
+  pre {
+    background-color: #313244;
+    border-left: 4px solid #89b4fa;
+    border-radius: 8px;
+  }
+  pre code {
+    color: #cdd6f4;
   }
   blockquote {
-    border-left-color: #ff6b35;
+    border-left: 4px solid #cba6f7;
+    background-color: rgba(203, 166, 247, 0.1);
+    padding: 10px 20px;
+    border-radius: 0 8px 8px 0;
+    font-style: italic;
+    color: #bac2de;
+  }
+  strong {
+    color: #f5c2e7;
+  }
+  em {
+    color: #94e2d5;
+  }
+  ul, ol {
+    color: #cdd6f4;
+  }
+  li::marker {
+    color: #89b4fa;
+  }
+  header, footer {
+    color: #6c7086;
+  }
+  table {
+    border-collapse: collapse;
+  }
+  th {
+    background-color: #313244;
+    color: #89b4fa;
+  }
+  td {
+    border: 1px solid #45475a;
   }
 ---
 
