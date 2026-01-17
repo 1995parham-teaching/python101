@@ -17,6 +17,6 @@ jobs:
           activate-environment: true
 
       - run: uv sync --all-groups -v
-      - run: ruff format --check src/ presentation/
-      - run: ruff check src/ presentation/
-      - run: mypy src/ presentation/
+      - run: ruff format --check src/
+      - run: ruff check src/
+      - run: mypy src/
