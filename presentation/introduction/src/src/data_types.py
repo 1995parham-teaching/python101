@@ -7,7 +7,9 @@ float_number = 10.1
 print(f"number: {float_number} ({type(float_number)})")
 
 complex_number = 1j
-print(f"number * number: {(complex_number * complex_number).real} ({type(complex_number)})")
+print(
+    f"number * number: {(complex_number * complex_number).real} ({type(complex_number)})"
+)
 
 division_result = 10 / 3
 print(f"10 / 3 = {division_result} ({type(division_result)})")
