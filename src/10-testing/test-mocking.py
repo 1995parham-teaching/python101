@@ -10,6 +10,7 @@ Note: Run with 'pytest test-mocking.py -v'
 
 Author: Parham Alvani (parham.alvani@gmail.com)
 """
+
 __author__ = "Parham Alvani"
 
 from unittest.mock import MagicMock, patch

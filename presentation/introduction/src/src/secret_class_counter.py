@@ -15,6 +15,5 @@ if __name__ == "__main__":
     # print(counter.__secret_count)
 
     print(
-        "access to hidden property by force: "
-        f"{counter._SecretCounter__secret_count}"  # type: ignore
+        f"access to hidden property by force: {counter._SecretCounter__secret_count}"  # type: ignore
     )

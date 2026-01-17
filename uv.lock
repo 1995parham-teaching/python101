@@ -399,9 +399,6 @@ version = "2.0.0"
 source = { virtual = "." }
 
 [package.dev-dependencies]
-all = [
-    { name = "python101" },
-]
 dev = [
     { name = "mypy" },
     { name = "pytest" },
@@ -416,10 +413,6 @@ examples = [
 [package.metadata]
 
 [package.metadata.requires-dev]
-all = [
-    { name = "python101", extras = ["dev"] },
-    { name = "python101", extras = ["examples"] },
-]
 dev = [
     { name = "mypy", specifier = ">=1.0" },
     { name = "pytest", specifier = ">=7.0" },

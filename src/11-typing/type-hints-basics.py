@@ -11,6 +11,7 @@ Note: Type hints are not enforced at runtime - use mypy for static checking.
 
 Author: Parham Alvani (parham.alvani@gmail.com)
 """
+
 __author__ = "Parham Alvani"
 
 from collections.abc import Callable, Iterable

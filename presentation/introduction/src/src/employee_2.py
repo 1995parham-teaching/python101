@@ -15,9 +15,7 @@ class Employee(abc.ABC):
         pass
 
     def __repr__(self):
-        return (
-            f"({type(self).__name__}): {self.name} ${self.salary} {id(self)}"
-        )
+        return f"({type(self).__name__}): {self.name} ${self.salary} {id(self)}"
 
 
 class FullTimeEmployee(Employee):

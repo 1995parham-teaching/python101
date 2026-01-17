@@ -10,6 +10,7 @@ Note: Run mypy for static type checking: mypy generics.py
 
 Author: Parham Alvani (parham.alvani@gmail.com)
 """
+
 __author__ = "Parham Alvani"
 
 from collections.abc import Sequence

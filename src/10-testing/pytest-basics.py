@@ -11,6 +11,7 @@ Note: Run with 'pytest pytest-basics.py -v' (requires 'pip install pytest')
 
 Author: Parham Alvani (parham.alvani@gmail.com)
 """
+
 __author__ = "Parham Alvani"
 
 import pytest

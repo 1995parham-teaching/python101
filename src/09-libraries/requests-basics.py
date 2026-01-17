@@ -10,6 +10,7 @@ Note: Requires 'pip install requests' to run.
 
 Author: Parham Alvani (parham.alvani@gmail.com)
 """
+
 __author__ = "Parham Alvani"
 
 try:
