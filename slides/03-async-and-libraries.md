@@ -1,9 +1,31 @@
 ---
 marp: true
-theme: default
+theme: gaia
+class: invert
 paginate: true
 header: "Python 101"
 footer: "Async Programming & Popular Libraries"
+style: |
+  :root {
+    --color-background: #1e1e2e;
+    --color-foreground: #cdd6f4;
+    --color-highlight: #ff6b35;
+  }
+  section {
+    background-color: #1e1e2e;
+  }
+  h1, h2, h3, h4, h5, h6 {
+    color: #ff6b35;
+  }
+  a {
+    color: #fab387;
+  }
+  code {
+    background-color: #313244;
+  }
+  blockquote {
+    border-left-color: #ff6b35;
+  }
 ---
 
 # Python 101: Week 3
