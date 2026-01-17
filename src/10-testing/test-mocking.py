@@ -25,17 +25,17 @@ class UserService:
     def __init__(self, api_client):
         self.api_client = api_client
 
-    def get_user(self, user_id: int) -> dict:
+    def get_user(self, user_id: int) -> dict:  # type: ignore[type-arg]
         """Fetch user from API."""
         response = self.api_client.get(f"/users/{user_id}")
         if response.status_code == 200:
-            return response.json()
+            return response.json()  # type: ignore[no-any-return]
         raise ValueError(f"User {user_id} not found")
 
-    def create_user(self, name: str, email: str) -> dict:
+    def create_user(self, name: str, email: str) -> dict:  # type: ignore[type-arg]
         """Create a new user via API."""
         response = self.api_client.post("/users", json={"name": name, "email": email})
-        return response.json()
+        return response.json()  # type: ignore[no-any-return]
 
 
 def fetch_data(url: str) -> str:

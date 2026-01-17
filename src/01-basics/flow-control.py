@@ -12,8 +12,8 @@ Author: Parham Alvani (parham.alvani@gmail.com)
 __author__ = "Parham Alvani"
 
 # Get user input and convert to integer
-number = input("please enter number: ")
-number = int(number)
+number_input = input("please enter number: ")
+number = int(number_input)
 
 # Check if number is even or odd using modulo operator
 if number % 2 == 0:

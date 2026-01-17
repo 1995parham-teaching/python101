@@ -40,7 +40,7 @@ class Contact:
         """Static method - doesn't receive self, belongs to class."""
         return "Hello"
 
-    def unbound_method():
+    def unbound_method():  # type: ignore[misc]
         """Method without self - can only be called on class, not instance."""
         return "Bye"
 

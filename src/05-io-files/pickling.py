@@ -51,8 +51,8 @@ if __name__ == "__main__":
     with open("data.pkl", "wb") as f:
         pickle.dump(my_object, f)
 
-    with open("data.pkl", "rb") as f:
-        loaded = pickle.load(f)
+    with open("data.pkl", "rb") as f_read:
+        loaded = pickle.load(f_read)
     print("Loaded from file:", loaded)
 
     # Cleanup

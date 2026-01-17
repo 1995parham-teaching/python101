@@ -1,10 +1,19 @@
+from typing import Any
+
+
 # Borg override __dict__ with its class-level dictionary
 # so all of its instances has access to the same methods and properties.
 class Borg:
-    __namespace = {"parameter": 10}
+    __namespace: dict[str, Any] = {"parameter": 10}
 
-    def __init__(self):
+    def __init__(self) -> None:
         self.__dict__ = Borg.__namespace
+
+    def __getattr__(self, name: str) -> Any:
+        return self.__dict__[name]
+
+    def __setattr__(self, name: str, value: Any) -> None:
+        self.__dict__[name] = value
 
 
 # set a parameter on b1 (an instance of Borg) and print

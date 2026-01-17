@@ -45,7 +45,7 @@ async def fetch_url(session: "aiohttp.ClientSession", url: str) -> dict:
         }
 
 
-async def fetch_all(urls: list[str]) -> list[dict]:
+async def fetch_all(urls: list[str]) -> list[dict | BaseException]:
     """
     Fetch multiple URLs concurrently.
 

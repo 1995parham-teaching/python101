@@ -16,13 +16,13 @@ name = input("Please enter your name: ")
 print(f"Hello {name}")  # Old-style string formatting
 
 # Input with type conversion and error handling
-number = input("Please enter number: ")
+number_input = input("Please enter number: ")
 try:
     # Attempt to convert string to integer
-    number = int(number)
+    number = int(number_input)
 except ValueError:
     # This block runs if conversion fails
-    print(f"{number} is not number")
+    print(f"{number_input} is not number")
 else:
     # This block runs only if try block succeeds (no exception)
     print(f"Your number is {number}")

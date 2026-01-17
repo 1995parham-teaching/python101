@@ -17,7 +17,7 @@ __author__ = "Parham Alvani"
 import asyncio
 
 
-@asyncio.coroutine
+@asyncio.coroutine  # type: ignore[attr-defined]
 def handle_echo(reader, writer):
     """
     Handle a single client connection.

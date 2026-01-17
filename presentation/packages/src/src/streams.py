@@ -14,16 +14,16 @@ import io
 
 if __name__ == "__main__":
     # Text IO
-    file = io.open("Hello.txt", "w")
-    if isinstance(file, io.TextIOBase):
+    text_file = io.open("Hello.txt", "w")
+    if isinstance(text_file, io.TextIOBase):
         print("Text IO....")
 
     # Binary IO
-    file = io.open("Hello.txt", "wb")
-    if isinstance(file, io.BufferedIOBase):
+    binary_file = io.open("Hello.txt", "wb")
+    if isinstance(binary_file, io.BufferedIOBase):
         print("Binary IO....")
 
     # Raw IO
-    file = io.open("Hello.txt", "rb", buffering=0)
-    if isinstance(file, io.RawIOBase):
+    raw_file = io.open("Hello.txt", "rb", buffering=0)
+    if isinstance(raw_file, io.RawIOBase):
         print("Raw IO....")

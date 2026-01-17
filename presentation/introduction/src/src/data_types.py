@@ -1,19 +1,19 @@
 print(f"{'':*<50s}\nworking with numbers:\n{'':*<50s}")
 
-number = 10
-print(f"number: {number} ({type(number)})")
+int_number = 10
+print(f"number: {int_number} ({type(int_number)})")
 
-number = 10.1
-print(f"number: {number} ({type(number)})")
+float_number = 10.1
+print(f"number: {float_number} ({type(float_number)})")
 
-number = 1j
-print(f"number * number: {(number * number).real} ({type(number)})")
+complex_number = 1j
+print(f"number * number: {(complex_number * complex_number).real} ({type(complex_number)})")
 
-number = 10 / 3
-print(f"10 / 3 = {number} ({type(number)})")
+division_result = 10 / 3
+print(f"10 / 3 = {division_result} ({type(division_result)})")
 
-number = 10 // 3
-print(f"10 // 3 = {number} ({type(number)})")
+floor_division_result = 10 // 3
+print(f"10 // 3 = {floor_division_result} ({type(floor_division_result)})")
 
 print(f"{'':*<50s}\nworking with strings:\n{'':*<50s}")
 

@@ -16,16 +16,16 @@ import gc
 
 # === Object Identity ===
 # id() returns the memory address of an object
-x = 10
-print("id(10):", id(x))
+x_int = 10
+print("id(10):", id(x_int))
 
 # Reassigning creates a new object
-x = "foo"
-print("id('foo'):", id(x))
+x_str = "foo"
+print("id('foo'):", id(x_str))
 
 # None is a singleton - same id everywhere
-x = None
-print("id(None):", id(x))
+x_none = None
+print("id(None):", id(x_none))
 
 # === Reference Sharing (Aliasing) ===
 # Lists are mutable - assignment creates alias, not copy
@@ -53,13 +53,13 @@ class DelMe:
 
 
 print("\n--- Garbage Collection ---")
-a = DelMe()
-del a  # Remove the only reference
+obj_a = DelMe()
+del obj_a  # Remove the only reference
 gc.collect()  # Force garbage collection
 print("After deleting object a")
 
-b = DelMe()
-b = None  # Setting to None also removes reference
+obj_b: DelMe | None = DelMe()
+obj_b = None  # Setting to None also removes reference
 print("After setting b to None")
 
 # Force collection to see the __del__ call
