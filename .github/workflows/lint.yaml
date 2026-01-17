@@ -14,11 +14,9 @@ jobs:
       - name: Setup uv
         uses: astral-sh/setup-uv@v7
         with:
-          python-version-file: pyproject.toml
           activate-environment: true
 
-      - name: Run ruff
-        run: ruff check src/ presentation/
-
-      - name: Run mypy
-        run: mypy src/ presentation/
+      - run: uv sync --all-groups -v
+      - run: ruff format --check src/ presentation/
+      - run: ruff check src/ presentation/
+      - run: mypy src/ presentation/
