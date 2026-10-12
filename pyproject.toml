@@ -45,3 +45,9 @@ ignore_missing_imports = true
 testpaths = ["src/10-testing"]
 python_files = ["test_*.py", "*_test.py"]
 asyncio_mode = "auto"
+
+[tool.ruff.lint]
+# The examples show patterns on purpose (old-style generics, `pass`
+# placeholders, the root logger, bare `open()`), so keep the rule set this repo
+# was written against instead of the wider default ruff 0.16 introduced.
+select = ["E4", "E7", "E9", "F"]
